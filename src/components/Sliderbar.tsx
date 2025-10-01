@@ -1,4 +1,5 @@
-export default function () {
+ "use client"
+export default function Sliderbar() {
    const topices = [
         "Dashboard",
         "Posts",
