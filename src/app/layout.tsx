@@ -1,19 +1,19 @@
-import type { Metadata } from "next"
-import "@/styles/globals.css"
-import { geistMono, geistSans } from "@/lib/fonts"
-import Navbar from "@/components/Navbar"
+import type { Metadata } from "next";
+import "@/styles/globals.css";
+import { geistMono, geistSans } from "@/lib/fonts";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: {
     template: "%s - TDACorp",
     default: "Dashboard - TDACorp",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -30,10 +30,10 @@ export default function RootLayout({
             { name: "Users", href: "/users" },
             { name: "Settings", href: "/settings" },
           ]}
-        
+          userName="Sahil Khan"
         />
         {children}
       </body>
     </html>
-  )
+  );
 }

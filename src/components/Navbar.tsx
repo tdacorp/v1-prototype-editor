@@ -10,12 +10,14 @@ type NavbarProps = {
   logo?: string;
   brand?: string;
   links?: NavLink[];
+  userName?: string;
 };
 
 export default function Navbar({
   logo = "",
   brand = "TDACorp",
   links = [],
+  userName = "User",
 }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -32,13 +34,15 @@ export default function Navbar({
         </button>
 
         {/* Logo / Brand */}
-        <Link href="/" className="flex items-center gap-2">
+             <Link href="/" className="flex items-center gap-2">
           {brand && (
-            <span className="font-bold text-lg text-red-600">{brand}</span>
+             <span className="font-bold text-lg text-red-600">{brand}</span>
+            
           )}
+        
         </Link>
       </div>
-      {/*   <span className="font-bold text-lg text-red-600">{brand}</span>
+    {/*   <span className="font-bold text-lg text-red-600">{brand}</span>
       </div> */}
 
       {/* Center: Navigation links (desktop) */}
@@ -53,6 +57,12 @@ export default function Navbar({
           </Link>
         ))}
       </nav>
+
+      {/* Right: User avatar / name */}
+      <div className="flex items-center gap-2 cursor-pointer">
+        <div className="w-9 h-9 rounded-full bg-gray-300"></div>
+        <span className="hidden md:block font-medium">{userName}</span>
+      </div>
 
       {/* Mobile Menu (slide-down) */}
       {menuOpen && (
