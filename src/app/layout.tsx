@@ -22,7 +22,6 @@ export default function RootLayout({
       >
         {/* Navbar */}
         <Navbar
-          logo="TDA"
           brand="TDACorp "
           links={[
             { name: "Dashboard", href: "/" },

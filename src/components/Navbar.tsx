@@ -7,14 +7,12 @@ import { Menu, X } from "lucide-react";
 type NavLink = { name: string; href: string };
 
 type NavbarProps = {
-  logo?: string;
   brand?: string;
   links?: NavLink[];
   userName?: string;
 };
 
 export default function Navbar({
-  logo = "",
   brand = "TDACorp",
   links = [],
   userName = "User",
