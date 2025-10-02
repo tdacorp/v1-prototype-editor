@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import "@/styles/globals.css"
 import { geistMono, geistSans } from "@/lib/fonts"
+import { SessionProvider } from "next-auth/react"
 
 export const metadata: Metadata = {
   title: {
@@ -17,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
-        {children}
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   )
