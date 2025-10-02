@@ -22,7 +22,7 @@ export default function MobileMenu() {
     <div className="sm:hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="p-2 rounded hover:bg-gray-200 transition-colors"
+        className="p-2 text-red-600 rounded hover:bg-gray-200 transition-colors"
       >
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
