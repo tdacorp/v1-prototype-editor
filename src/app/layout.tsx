@@ -22,9 +22,9 @@ export default function RootLayout({
       >
         {/* Navbar */}
         <Navbar
-          brand="TDACorp "
+          logo="TDACorp "
           links={[
-            { name: "Dashboard", href: "/" },
+            { name: "Dashboard", href: "/dashboard" },
             { name: "Content", href: "/content" },
             { name: "Users", href: "/users" },
             { name: "Settings", href: "/settings" },

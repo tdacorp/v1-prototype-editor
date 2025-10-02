@@ -7,13 +7,13 @@ import { Menu, X } from "lucide-react";
 type NavLink = { name: string; href: string };
 
 type NavbarProps = {
-  brand?: string;
+  logo?: string;
   links?: NavLink[];
   userName?: string;
 };
 
 export default function Navbar({
-  brand = "TDACorp",
+  logo = "TDACorp",
   links = [],
   userName = "User",
 }: NavbarProps) {
@@ -33,13 +33,11 @@ export default function Navbar({
 
         {/* Logo / Brand */}
         <Link href="/" className="flex items-center gap-2">
-          {brand && (
-            <span className="font-bold text-lg text-red-600">{brand}</span>
+          {logo && (
+            <span className="font-bold text-lg text-red-600">{logo}</span>
           )}
         </Link>
       </div>
-      {/*   <span className="font-bold text-lg text-red-600">{brand}</span>
-      </div> */}
 
       {/* Center: Navigation links (desktop) */}
       <nav className="hidden md:flex gap-6">
