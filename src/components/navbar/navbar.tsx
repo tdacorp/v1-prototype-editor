@@ -1,6 +1,7 @@
 import Links from "./links";
 import Logo from "./logo";
 import MobileMenu from "./menu";
+import User from "./user";
 
 export default function Navbar() {
   return (
@@ -9,9 +10,11 @@ export default function Navbar() {
         <section className="flex items-center gap-6">
           <Logo />
           <Links />
-            <MobileMenu/>
         </section>
-      
+        <section className="flex items-center gap-2">
+          <User/>
+          <MobileMenu />
+        </section>
       </nav>
     </header>
   );
