@@ -29,7 +29,7 @@ export default function RootLayout({
             { name: "Users", href: "/users" },
             { name: "Settings", href: "/settings" },
           ]}
-          userName="Sahil Khan"
+          userName="User"
         />
         {children}
       </body>
