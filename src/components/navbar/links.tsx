@@ -30,7 +30,7 @@ const Links = () => {
           key={name}
           href={href}
           className={cn(
-            "px-3 py-1 text-[1rem] rounded transition-colors",
+            "sm:flex px-3 py-1 text-[1rem] rounded transition-colors",
             "text-black hover:bg-blue-200",
             isActive && "font-bold text-blue-600 bg-blue-100"
           )}
