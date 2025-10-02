@@ -1,3 +1,4 @@
+import Links from "./links";
 import Logo from "./logo";
 
 export default function Navbar() {
@@ -6,6 +7,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center h-12 max-w-screen-xl mx-auto">
         <section className="flex items-center gap-6">
           <Logo />
+          <Links />
         </section>
       </nav>
     </header>
