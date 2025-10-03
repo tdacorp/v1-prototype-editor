@@ -15,7 +15,7 @@ export default function SidebarGroup({ group, collapsed }: { group: SidebarGroup
     return (
         <section aria-label="sidebar navigation" role="tree" className="mb-2">
             <ul role="group">
-                <li role="treeitem" aria-expanded={open}>
+                <li role="treeitem" aria-expanded={open} aria-selected={false}>
                     <button
                         type="button"
                         onClick={handleToggle}
@@ -23,7 +23,6 @@ export default function SidebarGroup({ group, collapsed }: { group: SidebarGroup
                         aria-expanded={open}
                         aria-controls={`sidebar-group-${group.title.replace(/\s+/g, "-").toLowerCase()}`}
                         tabIndex={0}
-                        aria-level={1}
                     >
                         {group.icon && (
                             <group.icon
@@ -42,7 +41,6 @@ export default function SidebarGroup({ group, collapsed }: { group: SidebarGroup
                             id={`sidebar-group-${group.title.replace(/\s+/g, "-").toLowerCase()}`}
                             className="pl-4 mt-1 space-y-1"
                             role="group"
-                            aria-level={2}
                         >
                             {group.children.map((child) => (
                                 <li key={child.href}>

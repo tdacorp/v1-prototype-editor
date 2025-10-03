@@ -1,12 +1,9 @@
-import { Home, User, Calendar, LayoutDashboard, Folder, FileText } from "lucide-react";
-// Add other icons as needed
-
+import {User, Calendar, LayoutDashboard, Folder, FileText } from "lucide-react";
 export interface SidebarChildLink {
   label: string;
   href: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
-
 export interface SidebarGroup {
   title: string;
   icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>; 
