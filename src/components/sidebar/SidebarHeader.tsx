@@ -8,38 +8,41 @@ interface SidebarHeaderProps {
 }
 export default function SidebarHeader({ collapsed, toggleCollapse }: SidebarHeaderProps) {
   return (
-    <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-      <div className="flex items-center gap-2 overflow-hidden">
-        <Image
-          src="/logo.jpg"
-          alt="logo"
-          width={32}
-          height={32}
-          className="rounded"
-        />
-        <span
-          className={`
-            font-bold text-lg text-gray-800 dark:text-gray-100 transition-all duration-300
-            ${collapsed ? "hidden" : "block"}
-          `}
+    <header className={`flex items-center justify-between border-b border-gray-900 dark:border-gray-700 bg-gray-2200
+       ${collapsed ? "justify-center" : "justify-between"}
+       p-4`}
+      aria-label="Sidebar header"
+    >
+      {!collapsed && (
+        <section className="flex items-center gap-2 overflow-hidden" aria-label="sideber branding">
+          <Image
+            src="/head.ico"
+            alt="App logo"
+            width={35}
+            height={35}
+            className="rounded"
+          />
+          <span className="font-bold text-2xl text-gray-800 dark:text-gray-100 transition-all duration-300">
+           -crop
+          </span>
+
+        </section>
+      )}
+      <span className={`realtive group ${collapsed ? "w-full flex justify-center" : ""}`}>
+
+        <button
+          onClick={toggleCollapse}
+          className={`p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 transition flex items-center justify-center`}
+          title={collapsed ? "Expand" : "Collapse"}
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          <span className="hidden sm:inline lg:hidden">TDA</span> 
-          <span className="hidden lg:inline">TheDarkArtist</span> 
-        </span>
-
-      </div>
-      <button
-        onClick={toggleCollapse} // add this
-        className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-        title={collapsed ? "Expand" : "Collapse"}
-      >
-        {collapsed ? (
-          <ChevronRight className="w-5 h-5" />
-        ) : (
-          <ChevronLeft className="w-5 h-5" />
-        )}
-      </button>
-
-    </div>
+          {collapsed ? (
+            <ChevronRight className="w-4 h-4" />
+          ) : (
+            <ChevronLeft className="w-4 h-4" />
+          )}
+        </button>
+      </span>
+    </header>
   )
 }

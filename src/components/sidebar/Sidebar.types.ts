@@ -1,7 +1,7 @@
 export interface SidebarLink {
     label: string;
     href: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 export interface SiderbarProps {
