@@ -1,0 +1,134 @@
+{
+  "pages": [
+    {
+      "id": "page-1",
+      "slug": "",
+      "status": "published",
+      "components": [
+        {
+          "id": "title",
+          "type": "TitleBlock",
+          "props": {
+            "title": "Welcome to My Editor Page"
+          }
+        } 
+      ],
+      "seo": {
+        "title": "Home Page",
+        "description": "This is the homepage of my dummy editor project",
+        "keywords": [
+          "editor",
+          "nextjs",
+          "json"
+        ],
+        "ogImage": "/images/hero.png"
+      },
+      "config": {
+        "layout": "standard"
+      },
+      "createdAt": "2025-10-10T10:00:00Z",
+      "updatedAt": "2025-10-10T12:00:00Z"
+    },
+    {
+      "id": "page-2",
+      "slug": "about",
+      "status": "published",
+      "components": [
+        {
+          "id": "title",
+          "type": "TitleBlock",
+          "props": {
+            "title": "Welcome to My About Page"
+          }
+        }
+      ],
+      "seo": {
+        "title": "About Page",
+        "description": "This is the about page of my dummy editor project",
+        "keywords": [
+          "editor",
+          "nextjs",
+          "json"
+        ],
+        "ogImage": "/images/hero.png"
+      },
+      "config": {
+        "layout": "standard"
+      },
+      "createdAt": "2025-10-10T10:00:00Z",
+      "updatedAt": "2025-10-10T12:00:00Z"
+    },
+    {
+      "id": "page-3",
+      "slug": "home/tda",
+      "status": "published",
+      "components": [
+        {
+          "id": "title",
+          "type": "TitleBlock",
+          "props": {
+            "title": "Welcome to TDA"
+          }
+        }
+      ],
+      "seo": {
+        "title": "TDA Home Page",
+        "description": "Homepage for TDA section",
+        "keywords": [
+          "tda",
+          "editor",
+          "nextjs"
+        ],
+        "ogImage": "/images/hero.png"
+      },
+      "config": {
+        "layout": "standard"
+      },
+      "createdAt": "2025-10-10T10:00:00Z",
+      "updatedAt": "2025-10-10T12:00:00Z"
+    },
+    {
+      "id": "page-4",
+      "slug": "about/tda",
+      "status": "published",
+      "components": [
+        {
+          "id": "title-1",
+          "type": "TitleBlock",
+          "props": {
+            "title": "Welcome to My About TDA Page"
+          }
+        },
+        {
+          "id": "title-2",
+          "type": "TitleBlock",
+          "props": {
+            "title": "This is my old creation"
+          }
+        },
+        {
+          "id": "title-3",
+          "type": "TitleBlock",
+          "props": {
+            "title": "This is my third component"
+          }
+        }
+      ],
+      "seo": {
+        "title": "TDA About Page",
+        "description": "About page for TDA section",
+        "keywords": [
+          "tda",
+          "editor",
+          "nextjs"
+        ],
+        "ogImage": "/images/hero.png"
+      },
+      "config": {
+        "layout": "standard"
+      },
+      "createdAt": "2025-10-10T10:00:00Z",
+      "updatedAt": "2025-10-10T12:00:00Z"
+    }
+  ]
+}
