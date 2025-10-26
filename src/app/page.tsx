@@ -1,24 +1,19 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { signOut, useSession } from "next-auth/react"
-import Link from "next/link"
+import { centerHero, formHero, leftHero, rightHero, shapeDividerHero, splitHero, statsHero, videoHero } from "@/components/hero/defaults"
+import Hero from "@/components/hero/Hero"
 
 export default function Home() {
-  const session = useSession()
   return (
-    <main className="p-6">
-      <div className="flex justify-end">
-        {session.status === "authenticated" ? (
-          <Button onClick={() => signOut()}>Sign out</Button>
-        ) : (
-          <Button asChild>
-            <Link href="/auth">Sign in</Link>
-          </Button>
-        )}
+      <div>
+        <Hero schema={centerHero}/>
+        <Hero schema={splitHero}/>
+        <Hero schema={leftHero}/>
+        <Hero schema={rightHero}/>
+        <Hero schema={formHero}/>
+        <Hero schema={shapeDividerHero}/>
+        <Hero schema={statsHero}/>
+        <Hero schema={videoHero}/>
       </div>
-      <h1>Editor - TDACorp</h1>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
-    </main>
   )
 }

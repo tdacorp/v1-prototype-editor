@@ -1,10 +1,10 @@
 export interface HeroBackground {
   type?: "image" | "color" | "video" | "gradient" | "pattern";
-  value?: string;
+  value?: string | string[]; 
   overlay?: boolean;
   overlayOpacity?: number;
   position?: string;
-  gradientDirection?: "to right" | "to bottom" | "diagonal";
+  gradientDirection?: "to right" | "to bottom" | "to bottom right";
 }
 
 export interface HeroCTA {
@@ -19,7 +19,7 @@ export interface HeroCTA {
 
 export interface HeroContentStyling {
   verticalAlignment?: "top" | "center" | "bottom"; 
-  contentPadding?: string;
+  // contentPadding?: string;
   maxWidth?: string; 
 }
 
@@ -49,6 +49,10 @@ export interface HeroProps {
   alignment?: "left" | "center" | "right";
   padding?: string; 
   isFullScreen?: boolean; 
+
+  width?: string | number;  
+  height?: string | number;
+
   mediaPosition?: "left" | "right"; 
   formPlaceholder?: string;
 
@@ -57,11 +61,11 @@ export interface HeroProps {
   stats?: { label: string; value: string }[];
   illustration?: string;
   shapeDivider?: "curve" | "diagonal" | "wave";
+
   textColor?: string;
+  shapeColor?: string;
 
   background?: HeroBackground;
-  height?: string;
-
   contentStyling?: HeroContentStyling
 }
 
