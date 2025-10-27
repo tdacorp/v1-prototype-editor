@@ -8,11 +8,11 @@ export interface ButtonStatus {
 
 export type ButtonVariantType = 
   | "default" 
-  | "rounded-full" 
+  | "primary"
   | "outlined" 
-  | "gradient"
-  | "icon-left"
-  | "icon-right";
+  | "secondary"
+  | "ghost"
+  | "danger";
 
 export interface ButtonVariant {
   value: ButtonVariantType;  
@@ -26,15 +26,18 @@ export interface ButtonSize {
   enum: ("sm" | "md" | "lg")[];
 }
 
+export type ButtonTargetType = "_blank" | "_self" ;
+
+
 export interface ButtonProps {
   label: string;
-  url: string;
+  href: string;
   variant: ButtonVariant;
   size: ButtonSize;
   alignment?: "left" | "center" | "right";
   isDisabled?: boolean;
   icon?: string;
-  target?: "_blank" | "_self";
+  target?: ButtonTargetType;
 }
 
 export interface ButtonStyle {
@@ -43,6 +46,7 @@ export interface ButtonStyle {
   borderRadius?: string;
   padding?: string;
   hoverColor?: string;
+  border?:string;
   shadow?:
    "none" 
    | "small" 
@@ -53,6 +57,8 @@ export interface ButtonStyle {
 export interface ButtonConfig {
   layout?: "inline" | "block" | "flex";
   responsive?: boolean;
+  fullWidth?:boolean;
+  showIcon: boolean;
 }
 
 export interface ButtonMeta {
