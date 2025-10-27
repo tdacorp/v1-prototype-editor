@@ -5,7 +5,7 @@ export const buildBackgroundStyle = (
 ): React.CSSProperties => {
   if (!bg) return {};
 
-  let styles: React.CSSProperties = {
+  const styles: React.CSSProperties = {
     position: "absolute",
     inset: 0,
     width: "100%",
