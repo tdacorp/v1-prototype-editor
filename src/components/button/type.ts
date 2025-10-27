@@ -1,13 +1,23 @@
+
 export interface ButtonStatus {
   value: "published" | "draft";
   default: "published" | "draft";
   enum: ("published" | "draft")[];
 }
 
+
+export type ButtonVariantType = 
+  | "default" 
+  | "rounded-full" 
+  | "outlined" 
+  | "gradient"
+  | "icon-left"
+  | "icon-right";
+
 export interface ButtonVariant {
-  value: "primary" | "secondary" | "outline";
-  default: "primary" | "secondary" | "outline";
-  variant: ("primary" | "secondary" | "outline")[];
+  value: ButtonVariantType;  
+  default: ButtonVariantType;
+  variant: ButtonVariantType[];
 }
 
 export interface ButtonSize {
@@ -33,7 +43,11 @@ export interface ButtonStyle {
   borderRadius?: string;
   padding?: string;
   hoverColor?: string;
-  shadow?: "none" | "small" | "medium" | "large";
+  shadow?:
+   "none" 
+   | "small" 
+   | "medium" 
+   | "large";
 }
 
 export interface ButtonConfig {
@@ -61,6 +75,5 @@ export interface ButtonSchema {
   meta?: ButtonMeta;
 }
 
-export type ButtonVariantType = "primary" | "secondary" | "outline";
 export type ButtonSizeType = "sm" | "md" | "lg";
 export type ButtonStatusType = "published" | "draft";
