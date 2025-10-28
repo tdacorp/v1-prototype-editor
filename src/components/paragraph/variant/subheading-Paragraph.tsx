@@ -2,11 +2,10 @@ import { ParagraphSchema } from "../types";
 
 
 export const SubheadingParagraph = ({ paragraph }: { paragraph: ParagraphSchema }) => (
-    <div style={{ marginTop: "150px" }}>
-
+    <div>
         <p
             style={{
-                 backgroundColor: paragraph.style?.backgroundColor,
+                backgroundColor: paragraph.style?.backgroundColor,
                 color: paragraph.style?.textColor,
                 fontFamily: paragraph.style?.fontFamily,
                 fontStyle: paragraph.style?.fontStyle,
@@ -14,6 +13,7 @@ export const SubheadingParagraph = ({ paragraph }: { paragraph: ParagraphSchema 
                 letterSpacing: paragraph.style?.letterSpacing,
                 margin: paragraph.style?.margin,
                 padding: paragraph.style?.padding,
+                fontSize: paragraph.style?.fontsize
             }}
         >{paragraph.props.content}</p>
 

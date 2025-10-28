@@ -46,6 +46,7 @@ export interface ParagraphStyle {
   letterSpacing?: string;
   margin?: string;
   padding?: string;
+  fontsize?:string;
 }
 
 export interface ParagraphConfig {
