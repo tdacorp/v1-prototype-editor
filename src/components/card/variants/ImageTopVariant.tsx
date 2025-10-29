@@ -1,14 +1,17 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CardSchema } from "../type";
+import Image from "next/image";
 
 export const ImageTopVariant = ({ card }: { card: CardSchema }) => (
 
 <Card className="w-[330px] bg-neutral-900 border-4 border-white rounded-xl shadow-lg flex flex-col px-3 py-4 m-12  cursor-pointer">
     <div className="overflow-hidden rounded-t-lg">
       {card.props.image && (
-        <img
+        <Image
           src={card.props.image.src}
           alt={card.props.image.alt}
+          width={50}
+          height={50}
           className="w-full aspect-video object-cover transition-transform duration-300 ease-in-out hover:scale-105"
         />
       )}
