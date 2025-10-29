@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HeroProps } from "./types";
+import Image from "next/image";
 
 const HeroMedia: React.FC<HeroProps> = ({
   image,
@@ -24,26 +25,34 @@ const HeroMedia: React.FC<HeroProps> = ({
     );
   }
 
-  if (image) {
+  if (image && !imgError) {
     const src = Array.isArray(image) ? image[0] : image;
     return (
-      <img
-        src={src}
-        alt={altText || "hero-image"}
-        className="w-full h-auto rounded-2xl"
-        onError={() => setImgError(true)}
-      />
+      <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden">
+        <Image
+          src={src}
+          alt={altText || "hero-image"}
+          fill
+          className="object-cover rounded-2xl"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          onError={() => setImgError(true)}
+        />
+      </div>
     );
   }
 
   if (illustration) {
     const src = illustration || "https://images.pexels.com/photos/16347225/pexels-photo-16347225.jpeg";
     return (
-      <img
-        src={src}
-        alt={altText || "hero-illustration"}
-        className="w-full h-auto"
-      />
+      <div className="relative w-full aspect-[16/9]">
+        <Image
+          src={src}
+          alt={altText || "hero-illustration"}
+          width={800}
+          height={600}
+          className="object-contain"
+        />
+      </div>
     );
   }
 
