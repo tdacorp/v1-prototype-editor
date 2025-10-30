@@ -1,16 +1,17 @@
+import Image from "next/image";
 import { CardSchema } from "../type";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const ArticleCardVariant = ({ card }: { card: CardSchema }) => (
 <Card className="w-[370px] bg-white rounded-2xl shadow-md overflow-hidden flex flex-col p-0  m-12">
       <div className="relative w-full h-[220px]">
-        {card.props.image && (
-          <img
-            src={card.props.image.src}
-            alt={card.props.image.alt}
-            className="w-full h-full object-cover"
+          <Image
+           src={card.props.image?.src?? ""}
+          alt={card.props.image?.alt?? ""}
+           width={80}
+           height={80}
+          className="w-full h-full object-cover"
           />
-        )}
         {card.props.bookmark && (
           <button className="absolute top-4 right-4 w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-50 transition">
             <svg
@@ -56,9 +57,11 @@ export const ArticleCardVariant = ({ card }: { card: CardSchema }) => (
           <div className="flex items-center gap-5 mt-auto pt-2 border-t border-gray-100">
             <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm">
               {card.props.author.avatar ? (
-                <img
+                <Image
                   src={card.props.author.avatar}
                   alt={card.props.author.name}
+                   width={80}
+                  height={80}
                   className="w-full h-full rounded-full object-cover"
                 />
               ) : (

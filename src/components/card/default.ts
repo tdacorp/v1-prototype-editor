@@ -21,7 +21,7 @@ export const imagetop: CardSchema = {
         "subtitle": "Building the future of web development services that help businesses go online with speed and scalability",
         "description": "We provide modern web development services that help businesses go online with speed and scalability.",
         "image": {
-            "src": "https://www.branddiaries.in/wp-content/uploads/2024/08/Digital-Empowerment.webp",
+            "src": "/topimage.jpeg",
             "alt": "Developer working on modern web solutions",
             aspectRatio: "16:9",
             position: {
@@ -145,7 +145,7 @@ export const userprofile: CardSchema = {
     props: {
         title: "Data Scientist Profile",
         user: {
-            avatar: "https://t4.ftcdn.net/jpg/05/11/55/91/360_F_511559113_UTxNAE1EP40z1qZ8hIzGNrB0LwqwjruK.jpg",
+            avatar: "/user.jpg",
             name: "Johep Waillim",
             position: "Data Scientist",
             followers: "1.5M",
@@ -211,7 +211,7 @@ export const iconinfo: CardSchema = {
     },
     "props": {
         "icon": {
-            "src": "https://api.iconify.design/mdi:script-text-outline.svg?color=%2300D084&width=48",
+            "src": "/home.svg",
             "alt": "Live logs icon",
             "size": "large"
         },
@@ -264,7 +264,7 @@ export const socialProfile: CardSchema = {
     "props": {
         "title":"this title",
         "socialProfile": {
-            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "avatar": "/avater.svg",
             "name": "Jerome Bell",
             "username": "whitefish664",
             "title": "Constructive and destructive waves",
@@ -323,7 +323,7 @@ export const articlecard: CardSchema ={
           },
           "props": {
             "image": {
-              "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKimrjFWdSL-1d7EGY0excHnxtFU0AN29WNw&s",
+              "src": "/articlalcard.jpeg",
               "alt": "Spider-Man: Across the Spider-Verse",
               "aspectRatio": "16:9"
             },
@@ -331,7 +331,7 @@ export const articlecard: CardSchema ={
             "title": "Spider-Man: Across the Spider-Verse",
             "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an...",
             "author": {
-              "avatar": "https://ui-avatars.com/api/?name=Sainath+Reddy&background=6B46C1&color=fff",
+              "avatar": "/avater.svg",
               "name": "Sainath Reddy",
               "date": "July 6 2023"
             },

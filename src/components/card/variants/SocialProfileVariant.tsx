@@ -1,16 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { CardSchema } from "../type";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 
 export const SocialProfileVariant = ({ card }: { card: CardSchema }) => (
      <Card className="w-[590px] bg-[#F5F5F5] rounded-2xl shadow-lg p-6 flex flex-col m-12">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
-          <img
+          {card.props.socialProfile?.avatar && (
+            <Image
             src={card.props.socialProfile?.avatar}
-            alt={card.props.socialProfile?.name}
+            alt={card.props.socialProfile?.name || 'user profiel' }
+            width={30}
+            height={30}
             className="w-16 h-16 rounded-full object-cover"
           />
+          )}
+          
           <div>
             <h3 className="text-xl font-bold text-gray-900">{card.props.socialProfile?.name}</h3>
             <p className="text-gray-500 text-sm">@{card.props.socialProfile?.username}</p>
