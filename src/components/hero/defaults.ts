@@ -162,7 +162,7 @@ export const videoHero: HeroSchema = {
     alignment: "center",
     textColor: "#fff",
     padding: "100px 20px",
-    videoUrl: "https://www.pexels.com/download/video/32057410/",
+    videoUrl: "https://www.pexels.com/download/video/1321208/",
     cta: {
       label: "Get Started",
       link: "/get-started",
@@ -333,3 +333,17 @@ export const shapeDividerHero: HeroSchema = {
     },
   },
 };
+
+export const heroMap: Record<string, HeroSchema> = {
+  centerhero: centerHero,
+  lefthero: leftHero,
+  righthero: rightHero,
+  splithero: splitHero,
+  videohero: videoHero,
+  minimalhero: minimalHero,
+  formhero: formHero,
+  carouselhero: carouselHero,
+  statshero: statsHero,
+  illustrationhero: illustrationHero,
+  shapedividerhero: shapeDividerHero,
+}

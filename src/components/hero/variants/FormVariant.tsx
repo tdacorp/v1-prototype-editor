@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import { HeroProps } from "../types";
 import HeroContent from "../HeroContent";

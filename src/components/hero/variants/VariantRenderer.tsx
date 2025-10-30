@@ -7,7 +7,8 @@ import VideoVariant from "./VideoVariant";
 import StatsVariant from "./StatsVariant";
 import ShapeDividerVariant from "./ShapeDividerVariant";
 import FormVariant from "./FormVariant";
-// import MinimalVariant from "./MinimalVariant";
+import MinimalVariant from "./MinimalVariant";
+import LeftVariant from "./LeftVariant";
 
 export const VariantRenderer: React.FC<{ variant: HeroVariant; props: HeroProps }> = ({
   variant,
@@ -25,7 +26,11 @@ export const VariantRenderer: React.FC<{ variant: HeroVariant; props: HeroProps 
     case "form":
       return <FormVariant {...props} />;
     case "minimal":
-      // return <MinimalVariant {...props} />;
+      return <MinimalVariant {...props} />;
+      case "left":
+      return <LeftVariant {...props} />;
+    case "right":
+      // return <RightVariant {...props} />;
     default:
       return <CenterVariant {...props} />;
   }

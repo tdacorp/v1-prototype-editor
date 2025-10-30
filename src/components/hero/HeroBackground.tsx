@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { HeroBackground as HeroBackgroundType } from "./types";
 import { buildBackgroundStyle } from "./bg-helper";
