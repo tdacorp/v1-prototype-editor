@@ -8,12 +8,11 @@ import StatsVariant from "./StatsVariant";
 import ShapeDividerVariant from "./ShapeDividerVariant";
 import FormVariant from "./FormVariant";
 import MinimalVariant from "./MinimalVariant";
-import LeftVariant from "./LeftVariant";
 
-export const VariantRenderer: React.FC<{ variant: HeroVariant; props: HeroProps }> = ({
-  variant,
-  props,
-}) => {
+export const VariantRenderer: React.FC<{
+  variant: HeroVariant;
+  props: HeroProps;
+}> = ({ variant, props }) => {
   switch (variant) {
     case "split":
       return <SplitVariant {...props} />;
@@ -27,10 +26,7 @@ export const VariantRenderer: React.FC<{ variant: HeroVariant; props: HeroProps 
       return <FormVariant {...props} />;
     case "minimal":
       return <MinimalVariant {...props} />;
-      case "left":
-      return <LeftVariant {...props} />;
-    case "right":
-      // return <RightVariant {...props} />;
+
     default:
       return <CenterVariant {...props} />;
   }

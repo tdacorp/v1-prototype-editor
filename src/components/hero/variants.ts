@@ -11,5 +11,5 @@ export const heroVariantMap: Record<HeroVariant, string> = {
   carousel: "hero-carousel",
   stats: "hero-stats",
   illustration: "hero-illustration",
-  shapeDivider: "hero-shapeDivider"
+  shapeDivider: "hero-shapeDivider",
 };

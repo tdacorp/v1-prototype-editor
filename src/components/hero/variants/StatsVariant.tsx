@@ -4,9 +4,7 @@ import HeroContent from "../HeroContent";
 
 const StatsVariant: React.FC<HeroProps> = (props) => {
   return (
-    <div
-      className="flex flex-col justify-center items-center text-center px-6 py-20"
-    >
+    <div className="flex flex-col justify-center items-center text-center px-6 py-20">
       <div className="max-w-3xl mb-10">
         <HeroContent {...props} />
       </div>

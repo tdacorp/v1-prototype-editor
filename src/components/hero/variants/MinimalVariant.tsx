@@ -1,16 +1,11 @@
-"use client"
+"use client";
 
 import React from "react";
 import { HeroProps } from "../types";
 import HeroContent from "../HeroContent";
 
 const MinimalVariant: React.FC<HeroProps> = (props) => {
-  const {
-    width = "100%",
-    height = "60vh",
-    padding = "60px 20px",
-  } = props;
-
+  const { width = "100%", height = "60vh", padding = "60px 20px" } = props;
 
   return (
     <section

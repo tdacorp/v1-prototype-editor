@@ -24,10 +24,7 @@ const ShapeDividerVariant: React.FC<HeroProps> = (props) => {
       )}
 
       {props.background?.type === "gradient" && bgValue && (
-        <div
-          className="absolute inset-0"
-          style={{ background: bgValue }}
-        />
+        <div className="absolute inset-0" style={{ background: bgValue }} />
       )}
 
       {props.background?.overlay && (
