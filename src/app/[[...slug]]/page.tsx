@@ -172,9 +172,11 @@ export default async function ClientPage({
     }
 
     // Handle rendering by type
-    <main className="min-h-screen flex items-center justify-center bg-gray-50">
-      {renderComponent(type, schema)}
-    </main>;
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-gray-50">
+        {renderComponent(type, schema)}
+      </main>
+    );
   }
 
   // ========================
