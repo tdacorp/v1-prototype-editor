@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import Hero from "@/components/hero/Hero";
 import { componentMap } from "@/data/componentsMap";
+import type { HeroSchema } from "@/components/hero/types";
 
 /**
  * Page: ClientPage
@@ -29,13 +30,22 @@ export default async function ClientPage({
 
   // Decode slugs to support human-readable URLs (e.g., spaces or encoded chars)
   const slugArray = Array.isArray(resolvedParams?.slug)
-    ? resolvedParams.slug.map((s) => decodeURIComponent(s))
+    ? resolvedParams.slug.map((s) => decodeURIComponent(s.toLowerCase()))
     : [];
 
   const [prefix, type, variant] = slugArray;
 
+  // Define components-to-schema mapping
+  type ComponentSchema = {
+    hero: HeroSchema;
+    // future: card: CardSchema;
+  };
+
   // Helper function: render component dynamically by type
-  const renderComponent = (type: string, schema: any) => {
+  const renderComponent = <T extends keyof ComponentSchema>(
+    type: T,
+    schema: ComponentSchema[T]
+  ) => {
     switch (type) {
       case "hero":
         return <Hero schema={schema} />;
@@ -137,7 +147,10 @@ export default async function ClientPage({
               <div className="w-full py-3 border-b text-center font-medium bg-gray-100 capitalize">
                 Variant: {variantName}
               </div>
-              {renderComponent(type, schema)}
+              {renderComponent(
+                type as keyof ComponentSchema,
+                schema as ComponentSchema[keyof ComponentSchema]
+              )}
             </div>
           ))}
         </div>
@@ -174,7 +187,10 @@ export default async function ClientPage({
     // Handle rendering by type
     return (
       <main className="min-h-screen flex items-center justify-center bg-gray-50">
-        {renderComponent(type, schema)}
+        {renderComponent(
+          type as keyof ComponentSchema,
+          schema as ComponentSchema[keyof ComponentSchema]
+        )}
       </main>
     );
   }
