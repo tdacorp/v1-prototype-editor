@@ -620,5 +620,109 @@ export const userProfileCarousel: CarouselSchema = {
   },
 };
 
+export const featureCarousel: CarouselSchema = {
+  id: "carousel-feature",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "feature-card",
+    default: "feature-card",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "image-card",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      {
+        id: "feature-1",
+        title: "Fast Performance",
+        subtitle: "Experience lightning-fast load times and smooth navigation.",
+        icon: {
+          src: "home.svg",
+          alt: "Performance Icon",
+          size: "large",
+        },
+      },
+      {
+        id: "feature-2",
+        title: "Secure Platform",
+        subtitle: "Your data is encrypted and protected with top-grade security.",
+        icon: {
+          src: "home.svg",
+          alt: "Security Icon",
+          size: "large",
+        },
+      },
+      {
+        id: "feature-3",
+        title: "Easy Customization",
+        subtitle: "Easily personalize your dashboard to fit your workflow.",
+        icon: {
+          src: "home.svg",
+          alt: "Customization Icon",
+          size: "large",
+        },
+      },
+      {
+        id: "feature-4",
+        title: "Cloud Integration",
+        subtitle: "Seamlessly sync with cloud services and apps.",
+        icon: {
+          src: "home.svg",
+          alt: "Cloud Icon",
+          size: "large",
+        },
+      },
+      {
+        id: "feature-5",
+        title: "24/7 Support",
+        subtitle: "We’re always here to help — anytime, anywhere.",
+        icon: {
+          src: "home.svg",
+          alt: "Support Icon",
+          size: "large",
+        },
+      },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 3000,
+    showArrows: true,
+    slidesToShow: 3,
+    responsive: [
+      { breakpoint: 1024, slidesToShow: 2 },
+      { breakpoint: 768, slidesToShow: 1 },
+    ],
+  },
+  style: {
+    height: "auto",
+    width: "100%",
+    padding: "32px",
+    backgroundColor: "#0D1117",
+    borderRadius: "16px",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.3)",
+  },
+  meta: {
+    createdAt: "2025-11-04T12:00:00Z",
+    updatedAt: "2025-11-04T12:00:00Z",
+    author: { id: "author-001" },
+  },
+};
+
 
 

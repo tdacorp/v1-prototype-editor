@@ -46,6 +46,11 @@ export interface UserProfileProps {
   followers: string;
   following: string;
 }
+export interface CardIcon {
+  src: string;
+  alt: string;
+  size?: "small" | "medium" | "large";
+}
 
 export interface SlideProps {
   id: string;
@@ -66,6 +71,7 @@ export interface SlideProps {
   button?: SlideButton;
   secondaryButton?: SlideButton;
   user?: UserProfileProps;
+   icon?: CardIcon;
   
 }
 
