@@ -32,5 +32,5 @@ export const Heading: React.FC<HeadingSchema> = ({
     transition: tokens.transitions.default,
   };
 
-  return <Tag style={styles}>{content}</Tag>;
+  return <Tag style={styles} className={className} >{content}</Tag>;
 };
