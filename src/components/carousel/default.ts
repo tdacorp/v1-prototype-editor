@@ -499,3 +499,126 @@ export const testimonial: CarouselSchema = {
     author: { id: "author-001" },
   },
 };
+
+
+export const userProfileCarousel: CarouselSchema = {
+  id: "carousel-user-profile",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "user-profile",
+    default: "user-profile",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "image-card",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      {
+        id: "user-1",
+        title: "Team Member 1",
+        user: {
+          avatar: "/user.jpg",
+          name: "Aarav Sharma",
+          position: "Frontend Developer",
+          followers: "12.3K",
+          following: "980",
+        },
+        rating: 4.8,
+        description: "Aarav is an expert in React and UI design with 5+ years of experience.",
+      },
+      {
+        id: "user-2",
+        title: "Team Member 2",
+        user: {
+         avatar: "/user.jpg",
+          name: "Priya Mehta",
+          position: "Backend Engineer",
+          followers: "9.5K",
+          following: "820",
+        },
+        rating: 4.9,
+        description: "Priya specializes in Node.js and API architecture.",
+      },
+      {
+        id: "user-3",
+        title: "Team Member 3",
+        user: {
+          avatar: "/user.jpg",
+          name: "Rohan Singh",
+          position: "Full Stack Developer",
+          followers: "10.7K",
+          following: "700",
+        },
+        rating: 4.7,
+        description: "Rohan loves solving problems with modern web technologies.",
+      },
+      {
+        id: "user-4",
+        title: "Team Member 4",
+        user: {
+         avatar: "/user.jpg",
+          name: "Kavya Patel",
+          position: "UI/UX Designer",
+          followers: "8.1K",
+          following: "560",
+        },
+        rating: 4.6,
+        description: "Kavya creates intuitive and engaging interfaces for users.",
+      },
+      {
+        id: "user-5",
+        title: "Team Member 5",
+        user: {
+          avatar: "/user.jpg",
+          name: "Vikram Desai",
+          position: "DevOps Engineer",
+          followers: "7.9K",
+          following: "640",
+        },
+        rating: 4.8,
+        description: "Vikram ensures smooth deployment and system reliability.",
+      },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 3000,
+    showArrows: true,
+    slidesToShow: 3,
+    responsive: [
+      { breakpoint: 1024, slidesToShow: 2 },
+      { breakpoint: 768, slidesToShow: 1 },
+    ],
+  },
+  style: {
+    height: "auto",
+    width: "100%",
+    padding: "32px",
+    backgroundColor: "#ffffff",
+    borderRadius: "16px",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+  },
+  meta: {
+    createdAt: "2025-11-04T12:00:00Z",
+    updatedAt: "2025-11-04T12:00:00Z",
+    author: { id: "author-001" },
+  },
+};
+
+
+

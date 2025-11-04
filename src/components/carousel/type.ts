@@ -39,6 +39,13 @@ export interface SlideButton {
   action: "navigate" | "open" | "click" | string;
   to?: string;
 }
+export interface UserProfileProps {
+  avatar: string;
+  name: string;
+  position: string;
+  followers: string;
+  following: string;
+}
 
 export interface SlideProps {
   id: string;
@@ -49,6 +56,7 @@ export interface SlideProps {
     src: string;
     alt: string;
     aspectRatio?: string;
+    
   };
   overlayPosition?: OverlayPosition;
   alignment?: Alignment;
@@ -57,6 +65,8 @@ export interface SlideProps {
   rating?: number;
   button?: SlideButton;
   secondaryButton?: SlideButton;
+  user?: UserProfileProps;
+  
 }
 
 export interface CarouselProps {
