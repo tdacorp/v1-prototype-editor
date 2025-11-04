@@ -40,71 +40,6 @@ export const centerHero: HeroSchema = {
   },
 };
 
-export const leftHero: HeroSchema = {
-  id: "hero-left",
-  type: "Hero",
-  variant: "left",
-  isPublished: true,
-  props: {
-    title: "Design without limits",
-    subtitle: "Intuitive tools for modern creators",
-    description:
-      "Empower your brand with a fast, flexible design system that scales.",
-    alignment: "left",
-    textColor: "#fff",
-    padding: "100px 20px",
-    width: "100%",
-    height: "80vh",
-    cta: {
-      label: "Start Now",
-      link: "/signup",
-      style: "secondary",
-      size: "medium",
-    },
-    background: {
-      type: "image",
-      value:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
-      overlay: true,
-      overlayOpacity: 0.5,
-      position: "center",
-    },
-    contentStyling: {
-      verticalAlignment: "center",
-      maxWidth: "700px",
-    },
-  },
-};
-
-export const rightHero: HeroSchema = {
-  id: "hero-right",
-  type: "Hero",
-  variant: "right",
-  isPublished: true,
-  props: {
-    title: "Empower your team",
-    subtitle: "Seamless collaboration starts here",
-    description:
-      "Tools, templates, and design systems to accelerate your workflow.",
-    alignment: "right",
-    textColor: "#ffffff",
-    padding: "80px 40px",
-    width: "100%",
-    height: "80vh",
-    image:
-      "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&w=1600&q=80",
-    background: {
-      type: "color",
-      value: "#1e293b",
-      overlay: false,
-    },
-    contentStyling: {
-      verticalAlignment: "center",
-      maxWidth: "700px",
-    },
-  },
-};
-
 export const splitHero: HeroSchema = {
   id: "hero-2",
   type: "Hero",
@@ -162,7 +97,7 @@ export const videoHero: HeroSchema = {
     alignment: "center",
     textColor: "#fff",
     padding: "100px 20px",
-    videoUrl: "https://www.pexels.com/download/video/32057410/",
+    videoUrl: "https://www.pexels.com/download/video/1321208/",
     cta: {
       label: "Get Started",
       link: "/get-started",
@@ -301,8 +236,7 @@ export const illustrationHero: HeroSchema = {
     padding: "80px 20px",
     width: "100%",
     height: "80vh",
-    illustration:
-      "https://illustrations.popsy.co/blue/opened-umbrella.svg",
+    illustration: "https://illustrations.popsy.co/blue/opened-umbrella.svg",
     background: {
       type: "color",
       value: "#f3f4f6",
@@ -332,4 +266,16 @@ export const shapeDividerHero: HeroSchema = {
       overlayOpacity: 0.25,
     },
   },
+};
+
+export const heroMap: Record<string, HeroSchema> = {
+  centerhero: centerHero,
+  splithero: splitHero,
+  videohero: videoHero,
+  minimalhero: minimalHero,
+  formhero: formHero,
+  carouselhero: carouselHero,
+  statshero: statsHero,
+  illustrationhero: illustrationHero,
+  shapedividerhero: shapeDividerHero,
 };

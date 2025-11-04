@@ -1,6 +1,6 @@
 export interface HeroBackground {
   type?: "image" | "color" | "video" | "gradient" | "pattern";
-  value?: string | string[]; 
+  value?: string | string[];
   overlay?: boolean;
   overlayOpacity?: number;
   position?: string;
@@ -12,15 +12,14 @@ export interface HeroCTA {
   link: string;
   style?: "primary" | "secondary" | "outline";
   size?: "small" | "medium" | "large";
-  icon?: string; 
+  icon?: string;
   target?: "_blank" | "_self";
-  customColor?: string; 
+  customColor?: string;
 }
 
 export interface HeroContentStyling {
-  verticalAlignment?: "top" | "center" | "bottom"; 
-  // contentPadding?: string;
-  maxWidth?: string; 
+  verticalAlignment?: "top" | "center" | "bottom";
+  maxWidth?: string;
 }
 
 export type HeroVariant =
@@ -40,20 +39,20 @@ export interface HeroProps {
   title: string;
   subtitle?: string;
   description?: string;
-  altText?: string; 
-  ariaLabel?: string; 
+  altText?: string;
+  ariaLabel?: string;
 
   cta?: HeroCTA;
-  secondaryCta?: HeroCTA; 
+  secondaryCta?: HeroCTA;
 
   alignment?: "left" | "center" | "right";
-  padding?: string; 
-  isFullScreen?: boolean; 
+  padding?: string;
+  isFullScreen?: boolean;
 
-  width?: string | number;  
+  width?: string | number;
   height?: string | number;
 
-  mediaPosition?: "left" | "right"; 
+  mediaPosition?: "left" | "right";
   formPlaceholder?: string;
 
   image?: string | string[];
@@ -66,17 +65,17 @@ export interface HeroProps {
   shapeColor?: string;
 
   background?: HeroBackground;
-  contentStyling?: HeroContentStyling
+  contentStyling?: HeroContentStyling;
 }
 
 export interface HeroMetadata {
-  id: string;                 
-  version?: number;           
-  createdAt?: string;         
-  updatedAt?: string;         
-  createdBy?: string;         
-  updatedBy?: string;         
-  isPublished?: boolean;      
+  id: string;
+  version?: number;
+  createdAt?: string;
+  updatedAt?: string;
+  createdBy?: string;
+  updatedBy?: string;
+  isPublished?: boolean;
 }
 
 export interface HeroSchema extends HeroMetadata {

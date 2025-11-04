@@ -1,24 +1,30 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import { HeroProps } from "../types";
 import HeroContent from "../HeroContent";
 
 const ShapeDividerVariant: React.FC<HeroProps> = (props) => {
+  const bgValue = Array.isArray(props.background?.value)
+    ? props.background.value[0]
+    : props.background?.value;
+
   return (
-    <div
-      className="relative flex flex-col justify-center items-center text-center overflow-hidden px-6 py-20"
-    >
-      {props.background?.type === "image" && props.background.value && (
-        <img
-          src={Array.isArray(props.background.value) ? props.background.value[0] : props.background.value}
+    <div className="relative flex flex-col justify-center items-center text-center overflow-hidden px-6 py-20">
+      {props.background?.type === "image" && bgValue && (
+        <Image
+          src={bgValue}
           alt="hero-bg"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
         />
       )}
-      {props.background?.type === "gradient" && props.background.value && (
-        <div
-          className="absolute inset-0"
-          style={{ background: Array.isArray(props.background.value) ? props.background.value[0] : props.background.value}}
-        />
+
+      {props.background?.type === "gradient" && bgValue && (
+        <div className="absolute inset-0" style={{ background: bgValue }} />
       )}
 
       {props.background?.overlay && (

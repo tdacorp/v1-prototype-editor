@@ -4,9 +4,7 @@ import HeroContent from "../HeroContent";
 
 const VideoVariant: React.FC<HeroProps> = (props) => {
   return (
-    <div
-      className="relative flex flex-col justify-center items-center text-center min-h-screen overflow-hidden"
-    >
+    <div className="relative flex flex-col justify-center items-center text-center min-h-screen overflow-hidden">
       {props.videoUrl && (
         <video
           className="absolute inset-0 w-full h-full object-cover"

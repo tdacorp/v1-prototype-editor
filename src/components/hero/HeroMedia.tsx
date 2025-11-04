@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { HeroProps } from "./types";
 import Image from "next/image";
@@ -42,7 +44,9 @@ const HeroMedia: React.FC<HeroProps> = ({
   }
 
   if (illustration) {
-    const src = illustration || "https://images.pexels.com/photos/16347225/pexels-photo-16347225.jpeg";
+    const src =
+      illustration ||
+      "https://images.pexels.com/photos/16347225/pexels-photo-16347225.jpeg";
     return (
       <div className="relative w-full aspect-[16/9]">
         <Image

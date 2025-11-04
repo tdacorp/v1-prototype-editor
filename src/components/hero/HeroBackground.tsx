@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { HeroBackground as HeroBackgroundType } from "./types";
 import { buildBackgroundStyle } from "./bg-helper";
@@ -8,7 +10,9 @@ const HeroBackground: React.FC<{ background?: HeroBackgroundType }> = ({
   if (!background) return null;
 
   if (background.type === "video" && background.value) {
-    const videoSrc = Array.isArray(background.value) ? background.value[0] : background.value;
+    const videoSrc = Array.isArray(background.value)
+      ? background.value[0]
+      : background.value;
     return (
       <>
         <video
@@ -24,10 +28,12 @@ const HeroBackground: React.FC<{ background?: HeroBackgroundType }> = ({
           <div
             className="absolute inset-0"
             style={{
-              backgroundColor: `rgba(0, 0, 0, ${background.overlayOpacity ?? 0.3})`,
+              backgroundColor: `rgba(0, 0, 0, ${
+                background.overlayOpacity ?? 0.3
+              })`,
               zIndex: 1,
               pointerEvents: "none",
-              mixBlendMode: "multiply", 
+              mixBlendMode: "multiply",
             }}
           />
         )}

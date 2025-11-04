@@ -1,12 +1,23 @@
+
 import React from "react";
 import { HeroProps } from "./types";
 import HeroCTAs from "./HeroCTAs";
 
-const HeroContent: React.FC<HeroProps> = ({ title, subtitle, description, cta, secondaryCta, textColor }) => {
+const HeroContent: React.FC<HeroProps> = ({
+  title,
+  subtitle,
+  description,
+  cta,
+  secondaryCta,
+  textColor,
+}) => {
   return (
     <div className="text-center max-w-3xl mx-auto px-4">
       {subtitle && (
-        <h4 className="text-lg font-medium mb-2 opacity-80" style={{ color: textColor }}>
+        <h4
+          className="text-lg font-medium mb-2 opacity-80"
+          style={{ color: textColor }}
+        >
           {subtitle}
         </h4>
       )}
