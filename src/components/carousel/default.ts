@@ -385,3 +385,117 @@ export const brandlogo: CarouselSchema = {
     author: { id: "author-001" }
   }
 };
+
+
+export const testimonial: CarouselSchema = {
+  id: "carousel-testimonial",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "testimonial",
+    default: "testimonial",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "image-card",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      {
+        id: "slide-1",
+        title: "John Doe",
+        subtitle: "CEO, TechCorp",
+        description: "Gofix transformed our service delivery process. Fast, reliable, and professional!",
+        image: {
+          src: "/avatars/img1.webp",
+          alt: "John Doe avatar",
+        },
+        rating: 5,
+        alignment: { value: "center", enum: ["left", "center", "right"] },
+      },
+      {
+        id: "slide-2",
+        title: "Sarah Lee",
+        subtitle: "Marketing Head, BrightHomes",
+        description: "Their app experience is seamless. Booked a service in seconds!",
+        image: {
+          src: "/avatars/mg2.webp",
+          alt: "Sarah Lee avatar",
+        },
+        rating: 4,
+        alignment: { value: "center", enum: ["left", "center", "right"] },
+      },
+      {
+        id: "slide-3",
+        title: "Aman Sharma",
+        subtitle: "Freelancer",
+        description: "Excellent support and great service professionals. Highly recommended!",
+        image: {
+          src: "/avatars/img3.webp",
+          alt: "Aman Sharma avatar",
+        },
+        rating: 5,
+        alignment: { value: "center", enum: ["left", "center", "right"] },
+      },
+      {
+        id: "slide-4",
+        title: "mohit Sharma",
+        subtitle: "freelancer",
+        description: "Excellent support and great service professionals. Highly recommended!",
+        image: {
+          src: "/avatars/img4.webp",
+          alt: "Aman Sharma avatar",
+        },
+        rating: 5,
+        alignment: { value: "center", enum: ["left", "center", "right"] },
+      },
+      {
+        id: "slide-5",
+        title: "ksuh Sharma",
+        subtitle: "System Enginner",
+        description: "Excellent support and great service professionals. Highly recommended!",
+        image: {
+          src: "/avatars/img5.webp",
+          alt: "Aman Sharma avatar",
+        },
+        rating: 5,
+        alignment: { value: "center", enum: ["left", "center", "right"] },
+      },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 4000,
+    showArrows: true,
+    showDots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+  },
+  style: {
+    height: "auto",
+    width: "100%",
+    padding: "32px",
+    backgroundColor: "#ffffff",
+    borderRadius: "16px",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+  },
+  meta: {
+    createdAt: "2025-11-04T12:00:00Z",
+    updatedAt: "2025-11-04T12:00:00Z",
+    author: { id: "author-001" },
+  },
+};

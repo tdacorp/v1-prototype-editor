@@ -1,16 +1,3 @@
-// "enum":= [
-//   "hero-slider",      // large banner with overlay text/button
-//   "image-gallery",    // simple image slideshow
-//   "image-card",       // image + title + description layout
-//   "feature-card",     // icon + info card carousel
-//   "user-profile",     // team or user cards
-//   "article-card",     // blog/article listing carousel
-//   "brand-logo",       // brand or partner logos
-//   "testimonial",      // customer feedback carousel
-//   "property-card",    // real-estate style cards
-//   "simple-text"       // text-only or quote carousel
-// ]
-
 
 export type CarouselVariantType =
   | "hero-slider"
@@ -67,9 +54,9 @@ export interface SlideProps {
   alignment?: Alignment;
   badges?: string[];
   tags?: string[];
+  rating?: number;
   button?: SlideButton;
   secondaryButton?: SlideButton;
-  // Extend with author, user, or other properties for other variants if needed
 }
 
 export interface CarouselProps {
