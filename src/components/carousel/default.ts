@@ -724,5 +724,143 @@ export const featureCarousel: CarouselSchema = {
   },
 };
 
+export const imageGalleryCarousel: CarouselSchema = {
+  id: "carousel-image-gallery",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "image-gallery",
+    default: "image-gallery",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "image-card",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      {
+        id: "gallery-1",
+        title: "Modern Office",
+        image: { src: "/gallery/office1.png", alt: "Modern Office" },
+      },
+      {
+        id: "gallery-2",
+        title: "Creative Workspace",
+        image: { src: "/gallery/office1.png", alt: "Creative Workspace" },
+      },
+      {
+        id: "gallery-3",
+        title: "Minimal Desk Setup",
+        image: { src: "/gallery/office1.png", alt: "Minimal Desk Setup" },
+      },
+      {
+        id: "gallery-4",
+        title: "Team Collaboration",
+        image: { src: "/gallery/office1.png", alt: "Team Collaboration" },
+      },
+      {
+        id: "gallery-5",
+        title: "Cozy Home Office",
+        image: { src: "/gallery/office1.png", alt: "Cozy Home Office" },
+      },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 3000,
+    showArrows: true,
+    slidesToShow: 3,
+    responsive: [
+      { breakpoint: 1024, slidesToShow: 2 },
+      { breakpoint: 768, slidesToShow: 1 },
+    ],
+  },
+  style: {
+    height: "auto",
+    width: "100%",
+    padding: "32px",
+    backgroundColor: "#0D1117",
+    borderRadius: "16px",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.3)",
+  },
+  meta: {
+    createdAt: "2025-11-04T12:00:00Z",
+    updatedAt: "2025-11-04T12:00:00Z",
+    author: { id: "author-001" },
+  },
+};
+
+export const simpleText = {
+  id: "carousel-simple-text-1",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "simple-text",
+    default: "simple-text",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "image-card",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      { id: "s1", title: "Welcome to our platform!" },
+      { id: "s2", title: "Empowering creativity through design." },
+      { id: "s3", title: "Build your own custom UI easily." },
+      { id: "s4", title: "Schema-driven components for scalability." },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 2500,
+    showArrows: false,
+    showDots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+  },
+  style: {
+    height: "100px",
+    width: "100%",
+    padding: "24px",
+    backgroundColor: "#111827",
+    borderRadius: "12px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+  },
+   meta: {
+    createdAt: "2025-11-04T12:00:00Z",
+    updatedAt: "2025-11-04T12:00:00Z",
+    author: { id: "author-001" },
+  },
+};
+
+
+
 
 

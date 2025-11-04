@@ -72,7 +72,6 @@ export interface SlideProps {
   secondaryButton?: SlideButton;
   user?: UserProfileProps;
    icon?: CardIcon;
-  
 }
 
 export interface CarouselProps {
