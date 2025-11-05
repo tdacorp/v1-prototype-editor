@@ -1,0 +1,38 @@
+[
+    {
+        "id": "link-1",
+        "type": "link",
+        "status": {
+            "value": "published",
+            "default": "draft",
+            "enum": [
+                "published",
+                "draft"
+            ]
+        },
+        "label": "Visit Homepage",
+        "href": "https://example.com",
+        "target": "_blank",
+        "style": {
+            "color": "#2563EB",
+            "underline": true,
+            "align": "left",
+            "fontWeight": "medium",
+            "fontSize": "1rem",
+            "margin": "0.5rem 0"
+        },
+        "config": {
+            "layout": "inline",
+            "responsive": true
+        },
+        "meta": {
+            "createdAt": "2025-10-29T12:00:00Z",
+            "updatedAt": "2025-10-29T12:00:00Z",
+            "lastModified": "2025-10-29T12:00:00Z",
+            "author": {
+                "id": "user-001",
+                "name": "John Doe"
+            }
+        }
+    }
+]
