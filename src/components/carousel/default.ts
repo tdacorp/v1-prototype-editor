@@ -14,7 +14,6 @@ export const heroslider: CarouselSchema = {
     "enum": [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -198,7 +197,6 @@ export const brandlogo: CarouselSchema = {
     enum: [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -401,7 +399,6 @@ export const testimonial: CarouselSchema = {
     enum: [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -515,7 +512,6 @@ export const userProfileCarousel: CarouselSchema = {
     enum: [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -634,7 +630,6 @@ export const featureCarousel: CarouselSchema = {
     enum: [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -738,7 +733,6 @@ export const imageGalleryCarousel: CarouselSchema = {
     enum: [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -803,7 +797,7 @@ export const imageGalleryCarousel: CarouselSchema = {
   },
 };
 
-export const simpleText = {
+export const simpleText : CarouselSchema = {
   id: "carousel-simple-text-1",
   type: "Carousel",
   status: {
@@ -817,7 +811,6 @@ export const simpleText = {
     enum: [
       "hero-slider",
       "image-gallery",
-      "image-card",
       "feature-card",
       "user-profile",
       "article-card",
@@ -859,6 +852,149 @@ export const simpleText = {
     author: { id: "author-001" },
   },
 };
+
+
+export const articleCardCarousel: CarouselSchema = {
+  id: "carousel-article-1",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "article-card",
+    default: "article-card",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      {
+        id: "a1",
+        title: "How AI is Reshaping Design Tools",
+        subtitle: "Explore how AI is empowering designers to create faster, smarter, and better.",
+        articleCard: {
+          image: { src: "/topimage.jpeg", alt: "Tech workspace" },
+          title: "How AI is Reshaping Design Tools",
+          subtitle: "Explore how AI is empowering designers to create faster, smarter, and better.",
+          badge: ["AI", "Design"],
+          author: {
+            name: "John Doe",
+            avatar: "/avatars/img1.webp",
+            date: "Nov 4, 2025",
+          },
+          bookmark: true,
+        },
+      },
+      {
+        id: "a2",
+        title: "Top 10 React UI Trends for 2025",
+        subtitle: "From animations to micro-interactions — see what's shaping the next wave of frontend design.",
+        articleCard: {
+          image: { src: "/topimage.jpeg", alt: "Frontend development" },
+          title: "Top 10 React UI Trends for 2025",
+          subtitle: "From animations to micro-interactions — see what's shaping the next wave of frontend design.",
+          badge: ["React", "UI"],
+          author: {
+            name: "Sarah Lee",
+            avatar: "/avatars/mg2.webp",
+            date: "Nov 2, 2025",
+          },
+          bookmark: false,
+        },
+      },
+      {
+        id: "a3",
+        title: "Building Schema-Driven UI Systems",
+        subtitle: "Learn how schema-based layouts can revolutionize component reusability.",
+        articleCard: {
+          image: { src: "/topimage.jpeg", alt: "Design thinking" },
+          title: "Building Schema-Driven UI Systems",
+          subtitle: "Learn how schema-based layouts can revolutionize component reusability.",
+          badge: ["Architecture", "System Design"],
+          author: {
+            name: "Alex Smith",
+            avatar: "/avatars/img3.webp",
+            date: "Oct 31, 2025",
+          },
+          bookmark: true,
+        },
+      },
+       {
+        id: "a4",
+        title: "Building Schema-Driven UI Systems",
+        subtitle: "Learn how schema-based layouts can revolutionize component reusability.",
+        articleCard: {
+          image: { src: "/topimage.jpeg", alt: "Design thinking" },
+          title: "Building Schema-Driven UI Systems",
+          subtitle: "Learn how schema-based layouts can revolutionize component reusability.",
+          badge: ["Architecture", "System Design"],
+          author: {
+            name: "Alex Smith",
+            avatar: "/avatars/img3.webp",
+            date: "Oct 31, 2025",
+          },
+          bookmark: true,
+        },
+      },
+       {
+        id: "a5",
+        title: "Top 10 React UI Trends for 2025",
+        subtitle: "From animations to micro-interactions — see what's shaping the next wave of frontend design.",
+        articleCard: {
+          image: { src: "/topimage.jpeg", alt: "Frontend development" },
+          title: "Top 10 React UI Trends for 2025",
+          subtitle: "From animations to micro-interactions — see what's shaping the next wave of frontend design.",
+          badge: ["React", "UI"],
+          author: {
+            name: "Sarah Lee",
+            avatar: "/avatars/mg2.webp",
+            date: "Nov 2, 2025",
+          },
+          bookmark: false,
+        },
+      },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 4000,
+    showArrows: true,
+    showDots: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    responsive: [
+      { breakpoint: 1024, slidesToShow: 2 },
+      { breakpoint: 768, slidesToShow: 1 },
+    ],
+  },
+  style: {
+    height: "auto",
+    width: "100%",
+    padding: "20px",
+    backgroundColor: "#f8fafc",
+    borderRadius: "12px",
+    boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+  },
+  meta: {
+    createdAt: "2025-11-04T12:00:00Z",
+    updatedAt: "2025-11-04T12:00:00Z",
+    author: { id: "author-001" },
+  },
+};
+
 
 
 

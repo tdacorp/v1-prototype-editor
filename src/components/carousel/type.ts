@@ -2,7 +2,6 @@
 export type CarouselVariantType =
   | "hero-slider"
   | "image-gallery"
-  | "image-card"
   | "feature-card"
   | "user-profile"
   | "article-card"
@@ -51,6 +50,23 @@ export interface CardIcon {
   alt: string;
   size?: "small" | "medium" | "large";
 }
+export interface AuthorProps {
+  name: string;
+  avatar?: string;
+  date?: string;
+}
+
+export interface ArticleCardProps {
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  subtitle?: string;
+  badge?: string[];
+  author?: AuthorProps;
+  bookmark?: boolean;
+}
 
 export interface SlideProps {
   id: string;
@@ -71,7 +87,8 @@ export interface SlideProps {
   button?: SlideButton;
   secondaryButton?: SlideButton;
   user?: UserProfileProps;
-   icon?: CardIcon;
+  icon?: CardIcon;
+  articleCard?: ArticleCardProps;
 }
 
 export interface CarouselProps {
