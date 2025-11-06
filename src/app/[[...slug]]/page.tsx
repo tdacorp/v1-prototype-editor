@@ -6,6 +6,8 @@ import Link from "next/link";
 import Hero from "@/components/hero/Hero";
 import { componentMap } from "@/data/componentsMap";
 import type { HeroSchema } from "@/components/hero/types";
+import type { AccordionGroupSchema } from "@/components/accordion/types";
+import { AccordionRenderer } from "@/components/accordion/AccordionRenderer";
 
 /**
  * Page: ClientPage
@@ -38,6 +40,7 @@ export default async function ClientPage({
   // Define components-to-schema mapping
   type ComponentSchema = {
     hero: HeroSchema;
+    accordion: AccordionGroupSchema;
     // future: card: CardSchema;
   };
 
@@ -48,10 +51,12 @@ export default async function ClientPage({
   ) => {
     switch (type) {
       case "hero":
-        return <Hero schema={schema} />;
+        return <Hero schema={schema as HeroSchema} />;
       // TODO: Add other components here as they’re created
       // case "card":
       //   return <Card schema={schema} />;
+      case "accordion":
+        return <AccordionRenderer schema={schema as AccordionGroupSchema} />;
       default:
         return (
           <div className="p-8 text-gray-500 text-center">
@@ -125,8 +130,8 @@ export default async function ClientPage({
     }
 
     return (
-      <main className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-6">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-10 capitalize">
+      <main className="min-h-screen bg-black flex flex-col items-center py-16 px-6">
+        <h1 className="text-3xl font-semibold text-gray-80 mb-10 capitalize">
           {type} Variants
         </h1>
 
@@ -144,7 +149,7 @@ export default async function ClientPage({
               key={variantName}
               className="w-full max-w-5xl flex flex-col items-center border border-gray-200 rounded-xl shadow-sm bg-white"
             >
-              <div className="w-full py-3 border-b text-center font-medium bg-gray-100 capitalize">
+              <div className="w-full py-3 border-b text-center font-medium bg-black capitalize">
                 Variant: {variantName}
               </div>
               {renderComponent(
