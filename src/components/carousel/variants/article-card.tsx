@@ -49,11 +49,11 @@ export const ArticleCardCarousel = () => {
               <CarouselItem
                 key={slide.id}
                 className="
-                  basis-1/3 lg:basis-1/3 md:basis-1/2 sm:basis-full
+                  basis-full sm:basis-1/2 lg:basis-1/3
                   flex justify-center px-4
                 "
               >
-                <div className="w-[360px] bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition">
+                <div className="w-full max-w-[360px] bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition">
                   {/* Image */}
                   {slide.articleCard?.image && (
                     <div className="relative w-full h-[200px]">
