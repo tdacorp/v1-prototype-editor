@@ -10,17 +10,22 @@ import { Card } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { CarouselSchema } from "../type";
 
+interface SimpleTextCarouselProps {
+  data: CarouselSchema;
+}
 
-export const SimpleTextCarousel = ({ props, config, style }: CarouselSchema) => {
-  const { slides } = props;
+export const SimpleTextCarousel = ({ data }: SimpleTextCarouselProps) => {
+  const { slides } = data.props;
+  const config = data.config;
+  const style = data.style;
 
   return (
     <div
       className="w-full max-w-4xl mx-auto"
       style={{
-        backgroundColor: style?.backgroundColor || "#111827",
-        borderRadius: style?.borderRadius || "12px",
-        padding: style?.padding || "16px",
+        backgroundColor: style?.backgroundColor,
+        borderRadius: style?.borderRadius,
+        padding: style?.padding ,
         color: "#fff",
         textAlign: "center",
         minHeight: style?.height || "100px",

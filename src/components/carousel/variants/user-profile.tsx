@@ -36,12 +36,16 @@ export const UserProfileCarousel = () => {
             loop: userProfileCarousel.config.loop,
             align: "start",
           }}
-          plugins={[
-            Autoplay({
-              delay: userProfileCarousel.config.interval || 3000,
-              stopOnInteraction: true,
-            }),
-          ]}
+         plugins={
+           userProfileCarousel.config.autoplay 
+           ?[ 
+             Autoplay({
+              delay:userProfileCarousel.config.interval || 3000,
+              stopOnInteraction:true,
+             }),
+           ]
+           : []
+        }
           className="w-full"
         >
           <CarouselContent>

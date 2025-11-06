@@ -10,21 +10,26 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { testimonial } from "../default";
 import { Star } from "lucide-react";
+import { CarouselSchema } from "../type";
 
-export const TestimonialCarousel = () => {
-    const { slides } = testimonial.props;
+interface TestimonialCarouselProps {
+    data: CarouselSchema;
+}
+export const TestimonialCarousel = ({ data }: TestimonialCarouselProps) => {
+    const { slides } = data.props;
+    const config = data.config;
+    const style = data.style;
 
     return (
         <section
             className="w-full py-16"
             style={{
-                padding: testimonial.style?.padding,
+                padding: style?.padding
             }}
         >
             <div className="max-w-6xl mx-auto text-center">
-                <h2 className="text-white text-3xl font-semibold mb-4 text-gray-800">
+                <h2 className="text-3xl font-semibold mb-4 text-gray-200">
                     What Our Clients Say
                 </h2>
                 <p className="text-gray-400 mb-10">
@@ -33,12 +38,12 @@ export const TestimonialCarousel = () => {
 
                 <Carousel
                     opts={{
-                        loop: testimonial.config.loop,
+                        loop: config?.loop,
                         align: "start",
                     }}
                     plugins={[
                         Autoplay({
-                            delay: testimonial.config.interval || 3000,
+                            delay: config?.interval || 3000,
                             stopOnInteraction: true,
                         }),
                     ]}
@@ -48,7 +53,7 @@ export const TestimonialCarousel = () => {
                         {slides.map((slide) => (
                             <CarouselItem
                                 key={slide.id}
-                                className="basis-1/3 md:basis-1/2 sm:basis-full flex justify-center px-4"
+                                className="basis-full md:basis-1/2 lg:basis-1/3 flex justify-center px-4"
                             >
                                 <div className="p-6 bg-white shadow-md rounded-2xl border border-gray-100 text-center max-w-sm mx-auto">
                                     <div className="flex justify-center mb-4">
@@ -87,7 +92,7 @@ export const TestimonialCarousel = () => {
                         ))}
                     </CarouselContent>
 
-                    {testimonial.config.showArrows && (
+                    {config?.showArrows && (
                         <>
                             <CarouselPrevious />
                             <CarouselNext />
