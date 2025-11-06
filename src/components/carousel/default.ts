@@ -994,6 +994,109 @@ export const articleCardCarousel: CarouselSchema = {
     author: { id: "author-001" },
   },
 };
+export const propertyCarousel: CarouselSchema = {
+  id: "carousel-property",
+  type: "Carousel",
+  status: {
+    value: "published",
+    default: "draft",
+    enum: ["published", "draft"],
+  },
+  variant: {
+    value: "property-card",
+    default: "property-card",
+    enum: [
+      "hero-slider",
+      "image-gallery",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text",
+    ],
+  },
+  props: {
+    slides: [
+      {
+        id: "property-1",
+        title: "Luxury Villa in Goa",
+        subtitle: "3 BHK • 1800 sq ft • Sea View",
+        description: "Modern villa with private pool, located near Baga Beach.",
+        image: {
+          src: "/property1.jpg",
+          alt: "Luxury Villa in Goa",
+        },
+        tags: ["For Sale", "Featured"],
+        rating: 4.8,
+        button: {
+          label: "View Details",
+          action: "navigate",
+          to: "/properties/villa-goa",
+        },
+      },
+      {
+        id: "property-2",
+        title: "Modern Apartment in Mumbai",
+        subtitle: "2 BHK • 1200 sq ft • City View",
+        description: "Located in a prime area with easy access to metro and malls.",
+        image: {
+          src: "/property2.jpg",
+          alt: "Apartment in Mumbai",
+        },
+        tags: ["For Rent"],
+        rating: 4.5,
+        button: {
+          label: "Book Now",
+          action: "navigate",
+          to: "/properties/apartment-mumbai",
+        },
+      },
+      {
+        id: "property-3",
+        title: "Beach House in Chennai",
+        subtitle: "4 BHK • 2500 sq ft • Beach Front",
+        description: "Spacious beach house perfect for vacation stays.",
+        image: {
+          src: "/property3.jpg",
+          alt: "Beach House in Chennai",
+        },
+        tags: ["For Sale"],
+        rating: 5,
+        button: {
+          label: "Explore",
+          action: "navigate",
+          to: "/properties/beach-house-chennai",
+        },
+      },
+    ],
+  },
+  config: {
+    loop: true,
+    autoplay: true,
+    interval: 4000,
+    showArrows: true,
+    slidesToShow: 3,
+    responsive: [
+      { breakpoint: 1024, slidesToShow: 2 },
+      { breakpoint: 768, slidesToShow: 1 },
+    ],
+  },
+  style: {
+    height: "auto",
+    width: "100%",
+    padding: "40px",
+    backgroundColor: "#F8FAFC",
+    borderRadius: "16px",
+  },
+  meta: {
+    createdAt: "2025-11-06T10:00:00Z",
+    updatedAt: "2025-11-06T10:00:00Z",
+    author: { id: "author-001" },
+  },
+};
+
 
 
 
