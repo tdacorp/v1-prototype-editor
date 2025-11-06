@@ -157,7 +157,7 @@ export const ComponentShowcaseLayout: LayoutNode = {
 };
 
 export const layoutResizableMap: Record<string, LayoutNode> = {
-  verticalsplite: VerticalSplitLayout,
+  verticalsplit: VerticalSplitLayout,
   horizontalsplit: HorizontalSplitLayout,
   mixededitor: MixedEditorLayout,
   deepnested: DeepNestedLayout,
