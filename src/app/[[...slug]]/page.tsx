@@ -71,32 +71,31 @@ export default async function ClientPage({
   // ========================
   if (prefix === "dev" && !type) {
     return (
-      <main className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-6">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-6">
-          Component Library
-        </h1>
-        <p className="text-gray-600 mb-12 text-center max-w-2xl">
-          Browse and preview all available component types and their variants.
-        </p>
+      <main className="min-h-screen bg-[#0a0a0a] text-white px-8 py-20 flex flex-col gap-12">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl font-semibold tracking-tight">
+            Component Library
+          </h1>
+          <p className="text-zinc-400 text-lg max-w-xl mx-auto">
+            Browse and preview UI components and their variants.
+          </p>
+        </div>
 
-        {/* 🔹 Render list of all component types */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl">
-          {Object.entries(componentMap).map(([typeName]) => (
-            <div
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto w-full">
+          {Object.keys(componentMap).map((typeName) => (
+            <Link
               key={typeName}
-              className="border border-gray-200 rounded-2xl shadow-sm bg-white hover:shadow-md transition-all duration-300 p-6 flex flex-col items-center"
+              href={`/dev/${typeName}`}
+              className="group p-8 border border-zinc-800 rounded-2xl bg-zinc-900/40 hover:bg-zinc-900/60 transition-all shadow-sm hover:shadow-lg flex flex-col items-center"
             >
-              <h2 className="text-xl font-semibold text-gray-800 mb-4 capitalize">
+              <h2 className="text-2xl font-medium capitalize group-hover:text-white text-zinc-300 transition">
                 {typeName}
               </h2>
 
-              <Link
-                href={`/dev/${typeName}`}
-                className="mt-4 text-blue-600 font-medium hover:underline"
-              >
-                View All {typeName} Variants →
-              </Link>
-            </div>
+              <span className="mt-4 text-blue-400 text-sm group-hover:underline">
+                View Variants →
+              </span>
+            </Link>
           ))}
         </div>
       </main>
@@ -107,57 +106,45 @@ export default async function ClientPage({
   // CASE 2: /dev/{type} → Variants Overview
   // ==============================
   if (prefix === "dev" && type && !variant) {
-    const componentGroup = componentMap[type as keyof typeof componentMap];
+    const group = componentMap[type as keyof typeof componentMap];
 
     // Handle invalid component type gracefully
-    if (!componentGroup) {
+    if (!group) {
       return (
-        <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-gray-600">
-          <h1 className="text-2xl font-semibold mb-2">
-            Unknown Component Type
-          </h1>
-          <p>
-            ❌ No components found for: <strong>{type}</strong>
-          </p>
-          <Link
-            href="/dev"
-            className="mt-4 text-blue-600 hover:underline font-medium"
-          >
-            ← Back to Library
-          </Link>
+        <main className="min-h-screen flex items-center justify-center bg-black text-zinc-400">
+          Unknown component type: {type}
         </main>
       );
     }
 
     return (
-      <main className="min-h-screen bg-black flex flex-col items-center py-16 px-6">
-        <h1 className="text-3xl font-semibold text-gray-80 mb-10 capitalize">
-          {type} Variants
-        </h1>
+      <main className="min-h-screen bg-[#0a0a0a] text-white px-8 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center justify-between mb-12">
+            <h1 className="text-3xl font-semibold capitalize">
+              {type} Variants
+            </h1>
+            <Link href="/dev" className="text-blue-400 hover:underline text-sm">
+              ← Back to Library
+            </Link>
+          </div>
 
-        <Link
-          href="/dev"
-          className="mt-1 pb-5 text-blue-600 font-medium hover:underline"
-        >
-          ← Back to Component Library
-        </Link>
+          <div className="flex flex-col gap-16">
+            {Object.entries(group).map(([variantName, schema]) => (
+              <div
+                key={variantName}
+                className="bg-zinc-900/40 border border-zinc-800 rounded-2xl p-6 flex flex-col gap-4"
+              >
+                <div className="text-lg font-medium capitalize text-zinc-300">
+                  {variantName}
+                </div>
 
-        {/* 🔹 Render all variants for a component */}
-        <div className="flex flex-col gap-12 w-full items-center">
-          {Object.entries(componentGroup).map(([variantName, schema]) => (
-            <div
-              key={variantName}
-              className="w-full max-w-5xl flex flex-col items-center border border-gray-200 rounded-xl shadow-sm bg-white"
-            >
-              <div className="w-full py-3 border-b text-center font-medium bg-black capitalize">
-                Variant: {variantName}
+                <div className="border border-zinc-800 rounded-lg overflow-hidden">
+                  {renderComponent(type as keyof ComponentSchema, schema)}
+                </div>
               </div>
-              {renderComponent(
-                type as keyof ComponentSchema,
-                schema as ComponentSchema[keyof ComponentSchema]
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </main>
     );
@@ -167,35 +154,33 @@ export default async function ClientPage({
   // CASE 3: /dev/{type}/{variant} → Specific Variant Preview
   // ==============================
   if (prefix === "dev" && type && variant) {
-    const componentGroup = componentMap[type as keyof typeof componentMap];
-    const schema = componentGroup?.[variant.toLowerCase()];
+    const group = componentMap[type as keyof typeof componentMap];
+    const schema = group?.[variant.toLowerCase()];
 
     // Handle invalid variant gracefully
     if (!schema) {
       return (
-        <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-red-500">
-          <h1 className="text-2xl font-semibold mb-2">Unknown Variant</h1>
-          <p>
-            ❌ <strong>{variant}</strong> is not a valid variant for{" "}
-            <strong>{type}</strong>.
-          </p>
-          <Link
-            href={`/dev/${type}`}
-            className="mt-4 text-blue-600 hover:underline font-medium"
-          >
-            ← View All {type} Variants
-          </Link>
+        <main className="min-h-screen flex items-center justify-center bg-black text-red-400">
+          Variant not found.
         </main>
       );
     }
 
     // Handle rendering by type
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-50">
-        {renderComponent(
-          type as keyof ComponentSchema,
-          schema as ComponentSchema[keyof ComponentSchema]
-        )}
+      <main className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center px-8 py-24">
+        <div className="absolute top-8 left-8 py-6">
+          <Link
+            href={`/dev/${type}`}
+            className="text-blue-400 hover:underline text-sm"
+          >
+            ← Back
+          </Link>
+        </div>
+
+        <div className="w-full max-w-6xl">
+          {renderComponent(type as keyof ComponentSchema, schema)}
+        </div>
       </main>
     );
   }
@@ -204,14 +189,32 @@ export default async function ClientPage({
   // CASE 4: 404 Fallback
   // ========================
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center text-gray-600 bg-gray-50">
-      <h1 className="text-xl font-semibold">404 — Not Found</h1>
-      <p className="text-sm text-gray-500 mt-2">
-        This page does not match any known route.
-      </p>
-      <Link href="/" className="mt-4 text-blue-600 hover:underline font-medium">
-        ← Go Home
-      </Link>
+    <main className="min-h-screen bg-[#0a0a0a] text-white flex flex-col items-center justify-center px-6">
+      <div className="text-center space-y-4">
+        <h1 className="text-6xl font-semibold tracking-tight text-zinc-200">
+          404
+        </h1>
+
+        <p className="text-zinc-400 max-w-md leading-relaxed">
+          The page you are looking for doesn’t exist or is unavailable.
+        </p>
+
+        <div className="flex items-center gap-3 pt-4">
+          <Link
+            href="/"
+            className="px-5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition text-sm font-medium"
+          >
+            Go Home
+          </Link>
+
+          <Link
+            href="/dev"
+            className="px-5 py-2 rounded-lg border border-zinc-700 hover:border-zinc-500 transition text-sm font-medium text-zinc-300"
+          >
+            Component Library
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
