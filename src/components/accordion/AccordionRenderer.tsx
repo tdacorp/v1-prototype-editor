@@ -15,7 +15,9 @@ export function AccordionRenderer({
 
   function toggle(id: string) {
     if (schema.variant === "single") {
-      setOpenIds(openIds.includes(id) ? [] : [id]);
+      setOpenIds(openIds.includes(id)
+      ? (schema.collapsible ? [] : openIds)
+      : [id]);
     } else {
       setOpenIds(
         openIds.includes(id)
