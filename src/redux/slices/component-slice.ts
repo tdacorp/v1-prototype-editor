@@ -1,10 +1,10 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ComponentsState, AvailableComponent } from '../../types'; 
-import { COMPONENT_REGISTRY } from '../../app/components/component-library/data/component-registry'; 
+import { COMPONET_REGISTRY } from '@/components/component-library/data/component-registry'
 
 const initialState: ComponentsState = {
-    availableComponents: COMPONENT_REGISTRY,
+    availableComponents: COMPONET_REGISTRY,
     selectedComponentId: null,
 };
 
@@ -24,4 +24,4 @@ const componentsSlice = createSlice({
 });
 
 export const { addComponent, setSelectedComponentId } = componentsSlice.actions;
-export default componentsSlice.reducer;
+export default componentsSlice.reducer;      
