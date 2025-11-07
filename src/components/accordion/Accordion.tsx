@@ -25,11 +25,17 @@ export function Accordion({
   iconPosition = "right",
   titleSize = "md",
 }: Props) {
+  const contentId = `accordion-content-${title
+    .replace(/\s+/g, "-")
+    .toLowerCase()}`;
+
   return (
     <div className="border border-gray-200 rounded-xl bg-white shadow-sm transition-all">
       <button
         onClick={onToggle}
         className="flex items-center justify-between w-full px-4 py-3 text-left"
+        aria-expanded={isOpen}
+        aria-controls={contentId}
       >
         {iconPosition === "left" && (
           <span className="text-gray-500 mr-2">
@@ -51,6 +57,9 @@ export function Accordion({
       </button>
 
       <div
+        id={contentId}
+        role="region"
+        aria-hidden={!isOpen}
         className={`overflow-hidden transition-all duration-300 ${
           isOpen ? "max-h-40 px-4 pb-4" : "max-h-0 px-4 pb-0"
         }`}
