@@ -60,8 +60,8 @@ export function Accordion({
         id={contentId}
         role="region"
         aria-hidden={!isOpen}
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-40 px-4 pb-4" : "max-h-0 px-4 pb-0"
+        className={`transition-all duration-300 ${
+          isOpen ? "px-4 pb-4" : "h-0 overflow-hidden px-4"
         }`}
       >
         <p className="text-sm text-gray-600 leading-relaxed">{content}</p>
