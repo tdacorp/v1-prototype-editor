@@ -2,7 +2,7 @@
 export interface ComponentVariant {
   id: string;
   name: string;
-  defaultProps?: Record<string, any>;
+  defaultProps?: Record<string, unknown>;
   previewImage?: string;
 }
 
