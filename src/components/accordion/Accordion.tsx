@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 type Props = {
@@ -25,9 +26,7 @@ export function Accordion({
   iconPosition = "right",
   titleSize = "md",
 }: Props) {
-  const contentId = `accordion-content-${title
-    .replace(/\s+/g, "-")
-    .toLowerCase()}`;
+  const uniqueId = useId();
 
   return (
     <div className="border border-gray-200 rounded-xl bg-white shadow-sm transition-all">
@@ -35,7 +34,7 @@ export function Accordion({
         onClick={onToggle}
         className="flex items-center justify-between w-full px-4 py-3 text-left"
         aria-expanded={isOpen}
-        aria-controls={contentId}
+        aria-controls={uniqueId}
       >
         {iconPosition === "left" && (
           <span className="text-gray-500 mr-2">
@@ -57,7 +56,7 @@ export function Accordion({
       </button>
 
       <div
-        id={contentId}
+        id={uniqueId}
         role="region"
         aria-hidden={!isOpen}
         className={`transition-all duration-300 ${
