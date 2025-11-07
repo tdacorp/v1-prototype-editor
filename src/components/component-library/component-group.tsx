@@ -44,21 +44,20 @@ const ComponentGroup: React.FC<ComponentGroupProps> =({
         onValueChange={handleAccordionToggle}
         >
             <AccordionItem value={component.id}
-             className="border-b border-gray-700 px-0"
+             className="px-0"
             >
             <AccordionTrigger
-            className="flex items-center justify-between w-full p-3 hover:bg-gray-700 transition-colors [&[data-state=open]>svg]:rotate-180"
+            className="flex items-center justify-between w-full p-2 hover:bg-gray-800 transition-colors [&[data-state=open]>svg]:rotate-180"
             draggable
            onDragStart={(e) => onDragStart(e, { type: 'COMPONENT', componentId: component.id, variantId: null })}
             >
-
                 <div className="flex items-center gap-3">
                     <span className="text-xl">{typeof component.icon === 'string' ? component.icon : <component.icon className="w-5 h-5 text-gray-400" />}</span>
                     <span className="font-medium text-white">{component.name}</span>
                 </div>
             </AccordionTrigger>
             <AccordionContent
-             className="p-2 pl-0 bg-gray-900 border-t border-gray-800"
+             className="p-2 pl-0  border-t border-gray-800"
             >
                 <div className="space-y-1">
                     {component.variants.map((variant)=>(

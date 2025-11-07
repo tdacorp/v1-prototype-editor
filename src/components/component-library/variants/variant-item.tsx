@@ -19,7 +19,6 @@ const VariantItem: React.FC<VariantItemProps> = ({ componentId, variant , onDrag
         draggable
         onDragStart={(e) => onDragStart(e, { type: 'COMPONENT_VARIANT', componentId: componentId, variantId: variant.id})}
         >
-            {/* You can add a small icon here for the variant if desired */}
             <span className="text-gray-500 group-hover:text-gray-300"></span>
             <span>{variant.name}</span>
 

@@ -1,5 +1,6 @@
 import { dangerbutton, defaultButton, ghostButton, outlinedButton, primaryButton, secondaryButton } from "@/components/button/defaults";
 import { articlecard, bgimgage, iconinfo, imagetop, socialProfile, userprofile } from "@/components/card/default";
+import { centerHero } from "@/components/hero/defaults";
 import { AvailableComponent } from "@/types";
 
 export const COMPONET_REGISTRY: AvailableComponent[] = [
@@ -83,7 +84,7 @@ export const COMPONET_REGISTRY: AvailableComponent[] = [
          variants: [
             {
                 id: imagetop.id,
-                name: `Card: ${imagetop.props.title}`,
+                name: `Card: ${imagetop.variant.value}`,
 
                 defaultProps: {
                     props: imagetop.props,
@@ -96,7 +97,7 @@ export const COMPONET_REGISTRY: AvailableComponent[] = [
             },
             {
                 id: bgimgage.id,
-                name: `Card: ${bgimgage.props.title}`,
+                name: `Card: ${bgimgage.variant.value}`,
                 defaultProps: {
                     props: bgimgage.props,
                     style: bgimgage.style,
@@ -108,7 +109,7 @@ export const COMPONET_REGISTRY: AvailableComponent[] = [
             },
             {
                 id: userprofile.id,
-                name: `Card ${userprofile.props.user?.name || userprofile.props.title}`,
+                name: `Card ${userprofile.variant.value}`,
                  defaultProps: {
                     props: userprofile.props,
                     style: userprofile.style,
@@ -132,7 +133,7 @@ export const COMPONET_REGISTRY: AvailableComponent[] = [
             },
             {
                 id: socialProfile.id,
-                name: `Card: ${socialProfile.props.socialProfile?.name || socialProfile.props.socialProfile?.title}`,
+                name: `Card: ${socialProfile.variant.value}`,
                 defaultProps: {
                     props: socialProfile.props,
                     style: socialProfile.style,
@@ -144,7 +145,7 @@ export const COMPONET_REGISTRY: AvailableComponent[] = [
             },
             {
                 id: articlecard.id,
-                name: `Card: ${articlecard.props.title}`,
+                name: `Card: ${articlecard.variant.value}`,
                 defaultProps: {
                     props: articlecard.props,
                     style: articlecard.style,
@@ -156,5 +157,25 @@ export const COMPONET_REGISTRY: AvailableComponent[] = [
             },
          ]
 
+    },
+    {
+        id:'Hero',
+        name:'Hero',
+         icon: '📦',
+         category:'Latout',
+         variants: [
+            {
+                id: 'one',
+                name : `${centerHero.id}`,
+                defaultProps :{
+                    porps:centerHero.props,
+                    style: centerHero.props,
+                    config: centerHero.props,
+                    variant: centerHero.variant,
+                    status: centerHero.isPublished
+
+                }
+            }
+         ]
     }
 ];

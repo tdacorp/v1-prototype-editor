@@ -38,10 +38,7 @@ const ComponentLibray: React.FC = () =>{
             setAccordionOpenItem(value);
     };
     return (
-        <aside className="w-60 bg-black text-white flex flex-col h-screen">
-            <div  className="p-4 mt-12 border-b border-gray-700">
-                <h2 className="text-xl font-semibold">Component Library</h2>
-            </div>
+        <aside className="w-60 mt-3 bg-black text-white flex flex-col h-screen">
             <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
             <nav className="flex-grow overflow-y-auto custom-scrollbar">
                 <div className="px-3 py-2 space-y-1">

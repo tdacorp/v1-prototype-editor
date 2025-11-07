@@ -11,7 +11,7 @@ interface VariantListProps {
 
 const VariantList: React.FC<VariantListProps> = ({ componentId, variants, onDragStart }) => {
     if (!variants || variants.length === 0) {
-        return <p className="p-2 pl-8 text-sm text-gray-500">No variants available.</p>;
+        return <p className="p-2 pl-8 text-sm text-red-500">No variants available.</p>;
     }
 
     return (
