@@ -1,7 +1,7 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ComponentsState, AvailableComponent } from '../../types'; 
-import { COMPONET_REGISTRY } from '@/components/component-library/data/component-registry'
+import { COMPONET_REGISTRY } from '@/data/component-registry';
 
 const initialState: ComponentsState = {
     availableComponents: COMPONET_REGISTRY,
