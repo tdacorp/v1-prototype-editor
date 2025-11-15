@@ -1,9 +1,9 @@
 import React from "react";
 import { AvailableComponent, DraggedComponentData } from "@/types";
 import { useAppDispatch } from "@/redux/hooks";
-import { setSelectedComponentId } from "@/redux/slices/component-slice";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import VariantItem from "./variants/variant-item";
+import { setSelectedCanvasItemId } from "@/redux/slices/component-slice";
 
 
 interface ComponentGroupProps {
@@ -32,9 +32,9 @@ const ComponentGroup: React.FC<ComponentGroupProps> =({
     const handleAccordionToggle = (value: string | undefined) =>{
         onValueChange(value)
         if(value === component.id){
-            dispatch(setSelectedComponentId(component.id))
+            dispatch(setSelectedCanvasItemId(component.id))
         }else {
-            dispatch(setSelectedComponentId(null))
+            dispatch(setSelectedCanvasItemId(null))
         }
 
     };

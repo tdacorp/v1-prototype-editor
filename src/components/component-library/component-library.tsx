@@ -11,7 +11,7 @@ const ComponentLibray: React.FC = () =>{
 
     const availableComponents = useAppSelector((state)=> state.components.availableComponents);
 
-    const selectedComponentIdInRedux = useAppSelector((state)=> state.components.selectedComponentId);
+    const selectedComponentIdInRedux = useAppSelector((state)=> state.components.selectedCanvasItemId);
 
     const { searchTerm, setSearchTerm, filteredComponent}= useComponentSearch(availableComponents);
 

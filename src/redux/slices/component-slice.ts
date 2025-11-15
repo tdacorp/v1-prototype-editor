@@ -5,7 +5,7 @@ import { COMPONET_REGISTRY } from '@/data/component-registry';
 
 const initialState: ComponentsState = {
     availableComponents: COMPONET_REGISTRY,
-    selectedComponentId: null,
+   selectedCanvasItemId: null,
 };
 
 const componentsSlice = createSlice({
@@ -16,12 +16,12 @@ const componentsSlice = createSlice({
             state.availableComponents.push(action.payload);
         },
 
-        setSelectedComponentId: (state, action: PayloadAction<string | null>) => {
-            state.selectedComponentId = action.payload;
+         setSelectedCanvasItemId: (state, action: PayloadAction<string | null>) => {
+            state.selectedCanvasItemId = action.payload;
         },
 
     },
 });
 
-export const { addComponent, setSelectedComponentId } = componentsSlice.actions;
+export const { addComponent,  setSelectedCanvasItemId } = componentsSlice.actions;
 export default componentsSlice.reducer;      

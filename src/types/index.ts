@@ -1,8 +1,13 @@
+import { ButtonSchema } from "@/components/button/type";
+import { CardSchema } from "@/components/card/type";
+import { HeroSchema } from "@/components/hero/types";
+
+export type StrictVariantProps = CardSchema | ButtonSchema | HeroSchema;
 
 export interface ComponentVariant {
   id: string;
   name: string;
-  defaultProps?: Record<string, unknown>;
+  defaultProps?: StrictVariantProps;
   previewImage?: string;
 }
 
@@ -17,7 +22,7 @@ export interface AvailableComponent {
 // Redux State Interfaces
 export interface ComponentsState {
   availableComponents: AvailableComponent[];
-  selectedComponentId: string | null;
+  selectedCanvasItemId: string | null;
 }
 
 // Data for drag-and-drop
