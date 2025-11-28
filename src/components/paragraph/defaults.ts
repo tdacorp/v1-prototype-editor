@@ -1,10 +1,10 @@
 import { ParagraphSchema } from "@/types/type"; 
 
 export const headingParagraph: ParagraphSchema = {
-    id: "text-2",
+    id: "paragraph-2",
     name: "heading",
     displayName: "Heading Block",
-    type: "text",
+    type: "paragraph",
     status: {
         value: "published",
         default: "draft",
@@ -64,10 +64,10 @@ export const headingParagraph: ParagraphSchema = {
 
 
 export const subheadingParagraph: ParagraphSchema = {
-    id: "text-3",
+    id: "paragraph-3",
     name: "subheading",
     displayName: "Subheading Block",
-    type: "text",
+    type: "paragraph",
     status: {
         value: "published",
         default: "draft",
@@ -125,10 +125,10 @@ export const subheadingParagraph: ParagraphSchema = {
 };
 
 export const paraParagraph: ParagraphSchema = {
-    id: "text-1",
+    id: "paragraph-1",
     name: "paragraph",
     displayName: "Paragraph Block",
-    type: "text",
+    type: "paragraph",
     status: {
         value: "published",
         default: "draft",
@@ -186,10 +186,10 @@ export const paraParagraph: ParagraphSchema = {
 };
 
 export const captionParagraph: ParagraphSchema = {
-    id: "text-4",
+    id: "paragraph-4",
     name: "caption",
     displayName: "Caption Block",
-    type: "text",
+    type: "paragraph",
     status: {
         value: "published",
         default: "draft",

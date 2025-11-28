@@ -5,32 +5,37 @@
 ----------------------------------- */
 
 export interface componentStatus {
-  value: "published" | "draft";
+  value: "published";
   default: "published" | "draft";
   enum: ("published" | "draft")[];
 }
 
+export interface BaseMeta {
+  createdAt?: string;
+  updatedAt?: string;
+  lastModified?: string;
+  author?: {
+    id: string;
+    name?: string;
+  };
+}
+
+
 export type ComponentType =
-  | "Hero"
-  | "Carousel"
-  | "Link"
-  | "Paragraph"
-  | "Heading"
-  | "Card"
-  | "Button"
-  | "accordion"
-  | "accordion-group"
+  | "Hero" 
+  | "Carousel" 
+  | "Link" 
+  | "Paragraph" 
+  | "Heading" 
+  | "Card" 
+  | "Button" 
+  | "Accordion" 
+  | "AccordionGroup" 
   | "ResizableLayout";
 
 /* -----------------------------------
    BUTTON SCHEMA
 ----------------------------------- */
-
-export interface ButtonStatus {
-  value: "published" | "draft";
-  default: "published" | "draft";
-  enum: ("published" | "draft")[];
-}
 
 export type ButtonVariantType =
   | "default"
@@ -85,25 +90,14 @@ export interface ButtonConfig {
   showIcon: boolean;
 }
 
-export interface ButtonMeta {
-  createdAt?: string;
-  updatedAt?: string;
-  lastModified?: string;
-  author?: {
-    id: string;
-    name?: string;
-  };
-}
-
 export interface ButtonSchema {
   id: string;
   type: "Button";
-  status: ButtonStatus;
+  status: componentStatus;
   props: ButtonProps;
-  variant: ButtonVariant;
   style?: ButtonStyle;
   config?: ButtonConfig;
-  meta?: ButtonMeta
+  meta?: BaseMeta
 }
 export type ButtonSizeType = "sm" | "md" | "lg";
 export type ButtonStatusType = "published" | "draft";
@@ -124,17 +118,13 @@ export interface HeadingSchema {
   props: HeadingProps;
   config?: Record<string, unknown>;
   style?: Record<string, unknown>;
+  status:componentStatus;
+  meta?:BaseMeta;
 }
 
 /* -----------------------------------
    CARD SCHEMA
 ----------------------------------- */
-
-export interface CardStatus {
-  value: "published" | "draft";
-  default: "published" | "draft";
-  enum: ("published" | "draft")[];
-}
 
 export type CardVariantType =
   | "image-top"
@@ -197,14 +187,14 @@ export interface UserProfileProps {
   following: string;
 }
 
-interface SocialProfileProps {
+export interface SocialProfileProps {
   avatar: string;
   name: string;
   username: string;
   title: string;
   description: string;
 }
-interface AuthorProps {
+export interface AuthorProps {
   avatar: string;
   name: string;
   date: string;
@@ -246,36 +236,20 @@ export interface CardConfig {
   clickable?: boolean;
 }
 
-export interface CardMeta {
-  createdAt?: string;
-  updatedAt?: string;
-  lastModified?: string;
-  author?: {
-    id: string;
-    name?: string;
-  };
-}
-
 export interface CardSchema {
   id: string;
   type: "Card";
-  status: CardStatus;
+  status: componentStatus;
   variant: CardVariant;
   props: CardProps;
   style?: CardStyle;
   config?: CardConfig;
-  meta?: CardMeta;
+  meta?: BaseMeta;
 }
 
 /* -----------------------------------
    LINK SCHEMA
 ----------------------------------- */
-
-export interface LinkStatus {
-  value: "published" | "draft";
-  default: "draft";
-  enum: ("published" | "draft")[];
-}
 
 export interface LinkStyle {
   color?: string;
@@ -296,23 +270,16 @@ export interface AuthorMeta {
   name: string;
 }
 
-export interface LinkMeta {
-  createdAt: string;
-  updatedAt: string;
-  lastModified: string;
-  author: AuthorMeta;
-}
-
 export interface LinkSchema {
   id: string;
-  type: "link";
-  status: LinkStatus;
+  type: "Link";
+  status: componentStatus;
   label: string;
   href: string;
   target?: "_self" | "_blank";
   style?: LinkStyle;
   config?: LinkConfig;
-  meta?: LinkMeta;
+  meta?: BaseMeta
 }
 
 
@@ -388,20 +355,13 @@ export interface HeroProps {
 
   background?: HeroBackground;
   contentStyling?: HeroContentStyling;
+ 
 }
 
-export interface HeroMetadata {
-  id: string;
-  version?: number;
-  createdAt?: string;
-  updatedAt?: string;
-  createdBy?: string;
-  updatedBy?: string;
-  isPublished?: boolean;
-}
 
-export interface HeroSchema extends HeroMetadata {
+export interface HeroSchema extends BaseMeta {
   type: "Hero";
+  status:componentStatus;
   variant: HeroVariant;
   props: HeroProps;
 }
@@ -411,11 +371,6 @@ export interface HeroSchema extends HeroMetadata {
    PARAGRAPH SCHEMA
 ----------------------------------- */
 
-export interface ParagraphStatus {
-  value: "published" | "draft";
-  default: "published" | "draft";
-  enum: ("published" | "draft")[];
-}
 
 export interface ParagraphType {
   value: "heading" | "subheading" | "paragraph" | "caption";
@@ -468,28 +423,17 @@ export interface ParagraphConfig {
   allowRichText?: boolean;
 }
 
-export interface MetaAuthor {
-  id: string;
-  name?: string;
-}
-
-export interface ParagraphMeta {
-  createdAt?: string;
-  updatedAt?: string;
-  lastModified?: string;
-  author?: MetaAuthor;
-}
 
 export interface ParagraphSchema {
   id: string;
   name: string;
   displayName: string;
-  type: "text";
-  status: ParagraphStatus;
+  type: "paragraph";
+  status: componentStatus;
   props: ParagraphProps;
   style?: ParagraphStyle;
   config?: ParagraphConfig;
-  meta?: ParagraphMeta;
+  meta?: BaseMeta;
 }
 
 export type ParagraphTypeType = "heading" | "subheading" | "paragraph" | "caption";
@@ -505,6 +449,8 @@ export type AccordionItemSchema = {
   title: string;
   content: string;
   defaultOpen?: boolean;
+  status:componentStatus
+  meta?:BaseMeta;
 
 };
 
@@ -518,6 +464,9 @@ export type AccordionGroupSchema = {
   iconPosition?: "left" | "right";
   titleSize?: "sm" | "md" | "lg";
   accordion: AccordionItemSchema[];
+  status: componentStatus;
+  meta?: BaseMeta;
+
 };
 
 /* -----------------------------------
@@ -535,11 +484,6 @@ export type CarouselVariantType =
   | "property-card"
   | "simple-text";
 
-export interface CarouselStatus {
-  value: "published" | "draft";
-  default: "published" | "draft";
-  enum: Array<"published" | "draft">;
-}
 
 export interface CarouselVariant {
   value: CarouselVariantType;
@@ -628,24 +572,16 @@ export interface CarouselStyle {
   boxShadow?: string;
 }
 
-export interface CarouselMeta {
-  createdAt?: string;
-  updatedAt?: string;
-  lastModified?: string;
-  author?: {
-    id: string;
-  };
-}
 
 export interface CarouselSchema {
   id: string;
   type: "Carousel";
-  status: CarouselStatus;
+  status: componentStatus;
   variant: CarouselVariant;
   props: CarouselProps;
   config: CarouselConfig;
   style?: CarouselStyle;
-  meta?: CarouselMeta;
+  meta?: BaseMeta;
 }
 
 /* -----------------------------------
@@ -669,8 +605,10 @@ export interface ResizableLayoutSchema {
   id: string;
   type: "ResizableLayout";
   props: ResizableLayoutProps;
+  status:componentStatus
   config?: Record<string, unknown>;
   style?: Record<string, unknown>;
+  meta?: BaseMeta;
 }
 
 /* -----------------------------------
@@ -707,10 +645,11 @@ export interface PageConfig {
 export interface Page {
   id: string;
   slug: string;
-  status: "published";
+  status: "published" | "draft";
   components: PageComponent[];
   seo: SEO;
   config: PageConfig;
-  createdAt: string;
-  updatedAt: string;
+ createdAt: string; 
+  updatedAt: string; 
+  
 }
