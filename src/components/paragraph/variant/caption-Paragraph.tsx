@@ -1,4 +1,4 @@
-import { ParagraphSchema } from "../types";
+import { ParagraphSchema } from "@/types/type" 
 
 
 export const CaptionParagraph = ({ paragraph }: { paragraph: ParagraphSchema }) => (

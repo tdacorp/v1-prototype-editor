@@ -1,4 +1,5 @@
-import { ParagraphTypeType } from "./types";
+import { ParagraphTypeType } from "@/types/type";
+
 
 
 export const paragraphVariantMap: Record<ParagraphTypeType, string> = {

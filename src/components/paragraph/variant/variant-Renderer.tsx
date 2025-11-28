@@ -1,4 +1,4 @@
-import { ParagraphSchema } from "../types";
+import { ParagraphSchema } from "@/types/type" 
 import { CaptionParagraph } from "./caption-Paragraph";
 import { HeadingParagraph } from "./heading-Paragraph";
 import { ParagraphParagraph } from "./paragraph-Paragraph";
