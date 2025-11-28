@@ -1,6 +1,6 @@
 import { imagetop, bgimgage, userprofile, iconinfo, socialProfile, articlecard } from "./default"; 
 import { VariantRenderer } from "./variants/VariantRenderer";
-import { CardSchema } from "./type";
+import { CardSchema } from "@/types/type";
 
 
 const cards: CardSchema[] = [

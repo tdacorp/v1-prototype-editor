@@ -1,5 +1,5 @@
 import { dangerbutton, defaultButton, ghostButton, outlinedButton, primaryButton, secondaryButton } from "./defaults";
-import { ButtonSchema } from "./type";
+import { ButtonSchema } from "@/types/type";
 import { ButtonVariantRenderer } from "./variant/variant-Renderer";
 
 
@@ -18,7 +18,7 @@ export const ButtonGallery = () => (
     {buttons.map(button =>
       <ButtonVariantRenderer
         key={button.id}
-        variant={button.props.variant.value}
+        variant={button.props.variant?.value}
         button={button}
       />
     )}

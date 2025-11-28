@@ -1,4 +1,4 @@
-import { ButtonSchema } from "../type";
+import { ButtonSchema } from "@/types/type";
 
 export const GhostButton = ({ button }: { button: ButtonSchema }) => (
     <button

@@ -1,5 +1,5 @@
 
-import { CardVariantType } from "./type";
+import { CardVariantType } from "@/types/type";
 
 export const cardVariantMap: Record<CardVariantType, string> = {
   "image-top": "card-image-top",

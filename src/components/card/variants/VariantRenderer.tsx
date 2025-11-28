@@ -1,5 +1,5 @@
 
-import { CardSchema, CardVariantType } from "../type";
+import { CardSchema, CardVariantType } from "@/types/type";
 import { ImageTopVariant } from "./ImageTopVariant";
 import { UserProfileVariant } from "./UserProfileVariant";
 import { BgImageVariant } from "./BgImageVariant";

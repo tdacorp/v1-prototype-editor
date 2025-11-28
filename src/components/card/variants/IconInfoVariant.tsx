@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { CardSchema } from "../type";
+import { CardSchema } from "@/types/type";
+
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const IconInfoVariant = ({ card }: { card: CardSchema }) => (

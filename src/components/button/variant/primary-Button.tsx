@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { ButtonSchema } from "../type";
+import { ButtonSchema } from "@/types/type";
+
 export const PrimaryButton = ({ button }: { button: ButtonSchema }) => (
   <Button
     style={{

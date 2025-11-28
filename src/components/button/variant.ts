@@ -1,4 +1,5 @@
-import { ButtonVariantType } from "./type";
+import { ButtonVariantType } from "@/types/type";
+
 
 export const buttonVariantMap: Record<ButtonVariantType, string> = {
   "default": "btn-default",

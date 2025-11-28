@@ -1,5 +1,6 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CardSchema } from "../type";
+import { CardSchema } from "@/types/type";
+
 import Image from "next/image";
 
 export const ImageTopVariant = ({ card }: { card: CardSchema }) => (

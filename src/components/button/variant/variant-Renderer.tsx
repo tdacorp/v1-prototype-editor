@@ -1,4 +1,4 @@
-import { ButtonSchema, ButtonVariantType } from "../type";
+import { ButtonSchema, ButtonVariantType } from "@/types/type";
 
 import { PrimaryButton } from "./primary-Button";
 import { DefalutButton } from "./default-Button";

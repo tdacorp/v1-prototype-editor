@@ -1,4 +1,6 @@
-import { CardSchema } from "./type"
+// import { CardSchema } from "./type"
+
+import { CardSchema } from "@/types/type";
 
 export const imagetop: CardSchema = {
     "id": "card-1",

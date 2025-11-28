@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { CardSchema } from "../type";
+import { CardSchema } from "@/types/type";
+
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
