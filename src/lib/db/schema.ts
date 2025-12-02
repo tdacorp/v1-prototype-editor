@@ -6,6 +6,9 @@ import {
   primaryKey,
   integer,
   pgEnum,
+  jsonb, 
+  uuid, 
+  varchar
 } from "drizzle-orm/pg-core"
 import type { AdapterAccountType } from "next-auth/adapters"
 
@@ -100,6 +103,51 @@ export const authenticators = pgTable(
   ]
 )
 
+
+
+//schema for the pages and the component
+
+export const pages = pgTable("pages", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    title: varchar("title", { length: 255 }).notNull(),
+    slug: varchar("slug", { length: 255 }).unique().notNull(),
+    description: text("description"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const pageComponents = pgTable("page_components", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    pageId: uuid("page_id")
+        .notNull()
+        .references(() => pages.id, { onDelete: "cascade" }),
+
+    type: varchar("type", { length: 100 }).notNull(),
+    props: jsonb("props").notNull().default({}),
+    styles: jsonb("styles").notNull().default({}),
+    sortOrder: varchar("sort_order", { length: 20 }).default("0"),
+});
+
+export const pageJson = pgTable("page_json", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    pageId: uuid("page_id")
+        .notNull()
+        .references(() => pages.id, { onDelete: "cascade" }),
+
+    layout: jsonb("layout").notNull(),
+    published: varchar("published", { length: 20 }).default("draft"),
+    
+});
+
+
+
 export const schema = {
   users,
+  accounts,
+  sessions,
+  verificationTokens,
+  authenticators,
+  pages,
+  pageComponents,
+  pageJson
 }
