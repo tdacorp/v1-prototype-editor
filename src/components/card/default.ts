@@ -11,7 +11,7 @@ export const imagetop: CardSchema = {
         variant: ["image-top"],
     },
     "status": {
-        "value": "draft",
+        "value": "published",
         "default": "draft",
         "enum": [
             "published",
@@ -140,7 +140,7 @@ export const userprofile: CardSchema = {
         variant: ["user-profile"],
     },
     status: {
-        value: "draft",
+        value: "published",
         default: "draft",
         enum: ["published", "draft"],
     },
@@ -204,7 +204,7 @@ export const iconinfo: CardSchema = {
         variant: ["icon-info"],
     },
     "status": {
-        "value": "draft",
+        "value": "published",
         "default": "draft",
         "enum": [
             "published",
@@ -256,7 +256,7 @@ export const socialProfile: CardSchema = {
         variant: ["social-profile"],
     },
     "status": {
-        "value": "draft",
+        "value": "published",
         "default": "draft",
         "enum": [
             "published",
@@ -316,7 +316,7 @@ export const articlecard: CardSchema ={
         variant: ["article-card"],
     },
           "status": {
-            "value": "draft",
+            "value": "published",
             "default": "draft",
             "enum": [
               "published",
