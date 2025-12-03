@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HeroProps } from "./types";
+import { HeroProps } from "@/types/type";
 import Image from "next/image";
 
 const HeroMedia: React.FC<HeroProps> = ({

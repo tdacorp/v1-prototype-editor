@@ -1,4 +1,6 @@
-import { HeroVariant } from "./types";
+// import { HeroVariant } from "./types";
+
+import { HeroVariant } from "@/types/type";
 
 export const heroVariantMap: Record<HeroVariant, string> = {
   center: "hero-center",

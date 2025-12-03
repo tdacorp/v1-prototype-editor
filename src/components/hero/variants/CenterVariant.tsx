@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { HeroProps } from "../types";
+import { HeroProps } from "@/types/type";
 import HeroContent from "../HeroContent";
 
 const CenterVariant: React.FC<HeroProps> = (props) => {

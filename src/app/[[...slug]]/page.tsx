@@ -5,9 +5,9 @@ import Link from "next/link";
 
 import Hero from "@/components/hero/Hero";
 import { componentMap } from "@/data/componentsMap";
-import type { HeroSchema } from "@/components/hero/types";
 import { LayoutNode } from "@/components/layout-resizable/types";
 import LayoutRenderer from "@/components/layout-resizable/LayoutRenderer";
+import { HeroSchema } from "@/types/type";
 
 /**
  * Page: ClientPage

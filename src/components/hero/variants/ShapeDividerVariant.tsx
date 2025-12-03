@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { HeroProps } from "../types";
+import { HeroProps } from "@/types/type";
 import HeroContent from "../HeroContent";
 
 const ShapeDividerVariant: React.FC<HeroProps> = (props) => {

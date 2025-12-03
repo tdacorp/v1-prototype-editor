@@ -1,4 +1,6 @@
-import { HeroBackground } from "./types";
+// import { HeroBackground } from "./types";
+
+import { HeroBackground } from "@/types/type";
 
 export const buildBackgroundStyle = (
   bg?: HeroBackground

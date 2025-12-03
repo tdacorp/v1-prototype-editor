@@ -1,6 +1,6 @@
 
 import React from "react";
-import { HeroProps } from "./types";
+import { HeroProps } from "@/types/type";
 import HeroCTAs from "./HeroCTAs";
 
 const HeroContent: React.FC<HeroProps> = ({

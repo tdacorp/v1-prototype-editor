@@ -1,4 +1,6 @@
-import { HeroSchema } from "./types";
+
+
+import { HeroSchema } from "@/types/type";
 
 export const centerHero: HeroSchema = {
   id: "hero-1",

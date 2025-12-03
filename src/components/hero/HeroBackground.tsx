@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { HeroBackground as HeroBackgroundType } from "./types";
+import { HeroBackground as HeroBackgroundType } from "@/types/type";
 import { buildBackgroundStyle } from "./bg-helper";
 
 const HeroBackground: React.FC<{ background?: HeroBackgroundType }> = ({

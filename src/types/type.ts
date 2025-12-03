@@ -14,6 +14,7 @@ export interface BaseMeta {
   createdAt?: string;
   updatedAt?: string;
   lastModified?: string;
+  isPublished?: boolean;
   author?: {
     id: string;
     name?: string;
@@ -355,13 +356,20 @@ export interface HeroProps {
 
   background?: HeroBackground;
   contentStyling?: HeroContentStyling;
- 
 }
 
+export interface HeroMetadata {
+  id: string;
+  version?: number;
+  createdAt?: string;
+  updatedAt?: string;
+  createdBy?: string;
+  updatedBy?: string;
+  isPublished?: boolean;
+}
 
-export interface HeroSchema extends BaseMeta {
+export interface HeroSchema extends HeroMetadata {
   type: "Hero";
-  status:componentStatus;
   variant: HeroVariant;
   props: HeroProps;
 }

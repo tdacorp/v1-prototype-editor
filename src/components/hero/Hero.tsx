@@ -1,7 +1,8 @@
 import React from "react";
-import { HeroSchema } from "./types";
+
 import HeroBackground from "./HeroBackground";
 import { VariantRenderer } from "./variants/VariantRenderer";
+import { HeroSchema } from "@/types/type";
 
 const Hero: React.FC<{ schema: HeroSchema }> = ({ schema }) => {
   const { variant, props } = schema;

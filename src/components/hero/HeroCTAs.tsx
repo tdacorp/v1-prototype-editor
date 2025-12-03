@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroCTA } from "./types";
+import { HeroCTA } from "@/types/type";
 
 const HeroCTAs: React.FC<{ cta?: HeroCTA; secondaryCta?: HeroCTA }> = ({
   cta,

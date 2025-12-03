@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroProps } from "../types";
+import { HeroProps } from "@/types/type";
 import HeroContent from "../HeroContent";
 
 const VideoVariant: React.FC<HeroProps> = (props) => {

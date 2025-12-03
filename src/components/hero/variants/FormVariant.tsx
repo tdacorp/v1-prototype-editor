@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HeroProps } from "../types";
+import { HeroProps } from "@/types/type";
 import HeroContent from "../HeroContent";
 
 const FormVariant: React.FC<HeroProps> = (props) => {

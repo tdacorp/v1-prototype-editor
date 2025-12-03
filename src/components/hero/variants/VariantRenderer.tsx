@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroProps, HeroVariant } from "../types";
+import { HeroProps, HeroVariant } from "@/types/type";
 
 import CenterVariant from "./CenterVariant";
 import SplitVariant from "./SplitVariant";

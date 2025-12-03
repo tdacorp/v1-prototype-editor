@@ -264,7 +264,7 @@ export const socialProfile: CardSchema = {
         ]
     },
     "props": {
-        "title":"this title",
+        "title": "this title",
         "socialProfile": {
             "avatar": "/avater.svg",
             "name": "Jerome Bell",
@@ -272,7 +272,7 @@ export const socialProfile: CardSchema = {
             "title": "Constructive and destructive waves",
             "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
         },
-         button: {
+        button: {
             label: "follow",
             action: "navigate",
             to: "/about",
@@ -306,60 +306,60 @@ export const socialProfile: CardSchema = {
 }
 
 
-export const articlecard: CardSchema ={
+export const articlecard: CardSchema = {
 
-          "id": "card-18",
-          "type": "Card",
-          variant: {
+    "id": "card-18",
+    "type": "Card",
+    variant: {
         value: "article-card",
         default: "article-card",
         variant: ["article-card"],
     },
-          "status": {
-            "value": "published",
-            "default": "draft",
-            "enum": [
-              "published",
-              "draft"
-            ]
-          },
-          "props": {
-            "image": {
-              "src": "/articlalcard.jpeg",
-              "alt": "Spider-Man: Across the Spider-Verse",
-              "aspectRatio": "16:9"
-            },
-            "badge": ["Sony", "Miles Morales"],
-            "title": "Spider-Man: Across the Spider-Verse",
-            "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an...",
-            "author": {
-              "avatar": "/avater.svg",
-              "name": "Sainath Reddy",
-              "date": "July 6 2023"
-            },
-            "bookmark": true
-          },
-          "config": {
-            "layout": "standard",
-            "orientation": "vertical",
-            "responsive": true,
-            "clickable": true
-          },
-          "style": {
-            "variant": "outlined",
-            "backgroundColor": "#ffffff",
-            "textColor": "#000000",
-            "borderRadius": "12px",
-            "shadow": "medium",
-            "padding": "16px",
-            "hoverEffect": "lift"
-          },
-          "meta": {
-            "createdAt": "2025-10-10T11:00:00Z",
-            "updatedAt": "2025-10-10T12:30:00Z",
-            "lastModified": "2025-10-15T09:45:00Z",
-            "author": {
-              "id": "author-001"
-            }
-          }
+    "status": {
+        "value": "published",
+        "default": "draft",
+        "enum": [
+            "published",
+            "draft"
+        ]
+    },
+    "props": {
+        "image": {
+            "src": "/articlalcard.jpeg",
+            "alt": "Spider-Man: Across the Spider-Verse",
+            "aspectRatio": "16:9"
+        },
+        "badge": ["Sony", "Miles Morales"],
+        "title": "Spider-Man: Across the Spider-Verse",
+        "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an...",
+        "author": {
+            "avatar": "/avater.svg",
+            "name": "Sainath Reddy",
+            "date": "July 6 2023"
+        },
+        "bookmark": true
+    },
+    "config": {
+        "layout": "standard",
+        "orientation": "vertical",
+        "responsive": true,
+        "clickable": true
+    },
+    "style": {
+        "variant": "outlined",
+        "backgroundColor": "#ffffff",
+        "textColor": "#000000",
+        "borderRadius": "12px",
+        "shadow": "medium",
+        "padding": "16px",
+        "hoverEffect": "lift"
+    },
+    "meta": {
+        "createdAt": "2025-10-10T11:00:00Z",
+        "updatedAt": "2025-10-10T12:30:00Z",
+        "lastModified": "2025-10-15T09:45:00Z",
+        "author": {
+            "id": "author-001"
+        }
+    }
 }
