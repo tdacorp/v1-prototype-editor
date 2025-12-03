@@ -1,8 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit'
-import componentsReducer from './slices/component-slice'
+import { configureStore } from '@reduxjs/toolkit'
+import componentsReducer from './slices/left-sidebar-slice/component-slice'
 
 export const store = configureStore({
-    reducer:{
+    reducer: {
         components: componentsReducer,
     }
 })

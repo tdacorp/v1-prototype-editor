@@ -1,6 +1,6 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ComponentsState, AvailableComponent } from '../../types'; 
+import { ComponentsState, AvailableComponent } from '@/types'; 
 import { COMPONET_REGISTRY } from '@/data/component-registry';
 
 const initialState: ComponentsState = {
@@ -16,12 +16,9 @@ const componentsSlice = createSlice({
             state.availableComponents.push(action.payload);
         },
 
-         setSelectedCanvasItemId: (state, action: PayloadAction<string | null>) => {
-            state.selectedCanvasItemId = action.payload;
-        },
 
     },
 });
 
-export const { addComponent,  setSelectedCanvasItemId } = componentsSlice.actions;
+export const { addComponent } = componentsSlice.actions;
 export default componentsSlice.reducer;      
