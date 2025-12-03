@@ -2,5 +2,5 @@
 export type ComponentInstance = {
   id: string;
   type: string;
-  props: Record<string, any>;
+  props: Record<string, unknown>;
 };

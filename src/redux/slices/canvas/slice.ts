@@ -24,7 +24,7 @@ const canvasSlice = createSlice({
 
     updateComponentProps(
       state,
-      action: PayloadAction<{ id: string; props: Record<string, any> }>
+      action: PayloadAction<{ id: string; props: Record<string, unknown> }>
     ) {
       const { id, props } = action.payload;
       const idx = state.components.findIndex((c) => c.id === id);
