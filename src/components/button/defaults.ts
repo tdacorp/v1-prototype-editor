@@ -153,7 +153,7 @@ export const secondaryButton: ButtonSchema = {
     }
 };
 export const primaryButton: ButtonSchema = {
-    "id": "btn-3",
+    "id": "btn-4",
     "type": "Button",
     "status": {
         "value": "published",
@@ -204,7 +204,7 @@ export const primaryButton: ButtonSchema = {
 };
 
 export const ghostButton: ButtonSchema = {
-    "id": "btn-4",
+    "id": "btn-5",
     "type": "Button",
     "status": {
         "value": "published",
@@ -255,7 +255,7 @@ export const ghostButton: ButtonSchema = {
 };
 
 export const dangerbutton: ButtonSchema = {
-    "id": "btn-4",
+    "id": "btn-6",
     "type": "Button",
     "status": {
         "value": "published",

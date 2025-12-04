@@ -1,6 +1,8 @@
-// store/canvas/types.ts
-export type ComponentInstance = {
+export type ComponentType = "hero" | "layoutresizable";
+
+export interface ComponentInstance {
   id: string;
-  type: string;
-  props: Record<string, unknown>;
-};
+  type: ComponentType;
+  variant: string;
+  props: any;
+}
