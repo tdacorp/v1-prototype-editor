@@ -8,15 +8,22 @@ import { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 import CanvasComponentRenderer from "@/components/canvas/CanvasComponentRenderer";
 
+type DragItem = {
+  componentId: string;
+  variantId: string;
+  variantName: string;
+  schema: Record<string, unknown>;
+};
+
 export default function CanvasEditor() {
   const dispatch = useDispatch();
   const components = useSelector((s: RootState) => s.canvas.components);
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const [{ isOver }, drop] = useDrop({
+  const [{ isOver }, drop] = useDrop<DragItem, unknown, { isOver: boolean }>({
     accept: "VARIANT",
-    drop: (item: any) => {
+    drop: (item) => {
       dispatch(
         addComponent({
           id: uuid(),
