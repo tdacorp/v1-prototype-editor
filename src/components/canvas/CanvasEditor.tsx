@@ -4,9 +4,10 @@ import { useDrop } from "react-dnd";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { addComponent, removeComponent } from "@/redux/slices/canvas/slice";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 import CanvasComponentRenderer from "@/components/canvas/CanvasComponentRenderer";
+import { setPageMeta } from "@/redux/slices/page/slice";
 
 type DragItem = {
   componentId: string;
@@ -18,6 +19,27 @@ type DragItem = {
 export default function CanvasEditor() {
   const dispatch = useDispatch();
   const components = useSelector((s: RootState) => s.canvas.components);
+  const pageMeta = useSelector((s: RootState) => s.page);
+
+  useEffect(() => {
+    console.log(
+      "%cREAL CANVAS JSON:",
+      "color: #10b981; font-weight: bold",
+      JSON.stringify({ page: pageMeta, components }, null, 2)
+    );
+  }, [components, pageMeta]);
+
+  useEffect(() => {
+    dispatch(
+      setPageMeta({
+        id: uuid(),
+        name: "Landing Page",
+        slug: "landing-page",
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+      })
+    );
+  }, []);
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
