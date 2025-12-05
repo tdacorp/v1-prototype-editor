@@ -1,0 +1,661 @@
+[
+{
+  "id": "string",
+  "type": "Button",
+
+  "status": {
+    "value": "published | draft",
+    "default": "published | draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "label": "string",
+    "href": "string",
+    "variant": "default | primary | secondary | outlined | ghost | danger",
+
+    "size": {
+      "value": "sm | md | lg",
+      "default": "sm | md | lg",
+      "enum": ["sm", "md", "lg"]
+    },
+
+    "alignment": "left | center | right",
+    "isDisabled": false,
+    "target": "_blank | _self | _parent | _top"
+  },
+
+  "style": {
+    "backgroundColor": "string",
+    "textColor": "string",
+    "borderRadius": "string",
+    "padding": "string",
+    "hoverColor": "string",
+    "shadow": "none | small | medium | large",
+    "border": "string"
+  },
+
+  "config": {
+    "layout": "inline | block",
+    "responsive": true,
+    "fullWidth": false,
+    "showIcon": false
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "Card",
+
+  "variant": {
+    "value": "string",
+    "default": "string",
+    "variant": ["string"]
+  },
+
+  "status": {
+    "value": "published | draft",
+    "default": "published | draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "title": "string",
+    "subtitle": "string",
+    "description": "string",
+
+    "image": {
+      "src": "string",
+      "alt": "string",
+      "aspectRatio": "string",
+      "position": {
+        "vertical": {
+          "value": "top | center | bottom",
+          "default": "string",
+          "enum": ["top", "center", "bottom"]
+        },
+        "horizontal": {
+          "value": "left | center | right",
+          "default": "string",
+          "enum": ["left", "center", "right"]
+        }
+      }
+    },
+
+    "backgroundImage": {
+      "src": "string",
+      "alt": "string"
+    },
+
+    "icon": {
+      "src": "string",
+      "alt": "string",
+      "size": "small | medium | large"
+    },
+
+    "user": {
+      "avatar": "string",
+      "name": "string",
+      "position": "string",
+      "followers": "string",
+      "following": "string"
+    },
+
+    "socialProfile": {
+      "avatar": "string",
+      "name": "string",
+      "username": "string",
+      "title": "string",
+      "description": "string"
+    },
+
+    "author": {
+      "avatar": "string",
+      "name": "string",
+      "date": "string"
+    },
+
+    "badge": ["string"],
+    "tags": ["string"],
+    "bookmark": true,
+
+    "button": {
+      "label": "string",
+      "action": "navigate | submit | custom",
+      "to": "string",
+      "style": "string",
+      "size": "string"
+    },
+
+    "secondaryButton": {
+      "label": "string",
+      "action": "navigate | submit | custom",
+      "to": "string",
+      "style": "string",
+      "size": "string"
+    }
+  },
+
+  "config": {
+    "layout": "standard | horizontal | compact",
+    "orientation": "vertical | horizontal",
+    "responsive": true,
+    "clickable": true
+  },
+
+  "style": {
+    "variant": "outlined | filled | glass | elevated",
+    "backgroundColor": "string",
+    "textColor": "string",
+    "borderRadius": "string",
+    "shadow": "none | small | medium | large",
+    "padding": "string",
+    "hoverEffect": "none | lift | glow"
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "Paragraph",
+  "displayName": "string",
+
+  "variant": {
+    "value": "string",
+    "default": "paragraph",
+    "enum": ["heading", "subheading", "paragraph", "caption"]
+  },
+
+  "status": {
+    "value": "published | draft",
+    "default": "draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "content": "string",
+
+    "type": {
+      "value": "heading | subheading | paragraph | caption",
+      "default": "paragraph",
+      "enum": ["heading", "subheading", "paragraph", "caption"]
+    },
+
+    "alignment": {
+      "value": "left | center | right | justify",
+      "default": "left",
+      "enum": ["left", "center", "right", "justify"]
+    },
+
+    "size": {
+      "value": "sm | md | lg | xl",
+      "default": "md",
+      "enum": ["sm", "md", "lg", "xl"]
+    },
+
+    "weight": {
+      "value": "light | normal | medium | semibold | bold",
+      "default": "normal",
+      "enum": ["light", "normal", "medium", "semibold", "bold"]
+    },
+
+    "isTruncated": true,
+    "maxLines": "number"
+  },
+
+  "config": {
+    "layout": "inline | block",
+    "responsive": true,
+    "allowRichText": true
+  },
+
+  "style": {
+    "backgroundColor": "string",
+    "textColor": "string",
+    "fontFamily": "string",
+    "fontStyle": "normal | italic | oblique",
+    "lineHeight": "string",
+    "letterSpacing": "string",
+    "margin": "string",
+    "padding": "string",
+    "fontSize": "string"
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "Heading",
+
+  "status": {
+    "value": "published | draft",
+    "default": "draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "content": "string",
+
+    "level": {
+      "value": "1 | 2 | 3 | 4 | 5 | 6",
+      "default": 1,
+      "enum": [1, 2, 3, 4, 5, 6]
+    },
+
+    "align": {
+      "value": "left | center | right",
+      "default": "left",
+      "enum": ["left", "center", "right"]
+    },
+
+    "weight": {
+      "value": "normal | medium | semibold | bold",
+      "default": "bold",
+      "enum": ["normal", "medium", "semibold", "bold"]
+    },
+
+    "italic": false,
+    "underline": false
+  },
+
+  "style": {
+    "color": "string",
+    "margin": "string",
+    "lineHeight": "string",
+    "letterSpacing": "string",
+    "transform": {
+      "value": "none | lowercase | capitalize | uppercase",
+      "default": "none",
+      "enum": ["none", "lowercase", "capitalize", "uppercase"]
+    }
+  },
+
+  "config": {
+    "responsive": true
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "Hero",
+  "variant": "string",
+  "isPublished": true,
+  "props": {
+    "title": "string",
+    "subtitle": "string",
+    "description": "string",
+
+    "alignment": "left | center | right",
+    "textColor": "string",
+    "padding": "string",
+    "width": "string",
+    "height": "string",
+
+    "cta": {
+      "label": "string",
+      "link": "string",
+      "style": "primary | secondary | outline",
+      "size": "small | medium | large"
+    },
+
+    "secondaryCta": {
+      "label": "string",
+      "link": "string",
+      "style": "primary | secondary | outline",
+      "size": "small | medium | large"
+    },
+
+    "image": "string or string[]",
+    "videoUrl": "string",
+    "mediaPosition": "left | right",
+
+    "formPlaceholder": "string",
+
+    "stats": [
+      {
+        "label": "string",
+        "value": "string"
+      }
+    ],
+
+    "illustration": "string",
+
+    "shapeDivider": "string",
+
+    "background": {
+      "type": "color | gradient | image | video",
+      "value": "string or string[]",
+      "gradientDirection": "string",
+      "overlay": true,
+      "overlayOpacity": 0.5
+    },
+
+    "contentStyling": {
+      "verticalAlignment": "top | center | bottom",
+      "maxWidth": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "Carousel",
+
+  "variant": {
+    "value": "string",
+    "default": "hero-slider",
+    "enum": [
+      "hero-slider",
+      "image-gallery",
+      "feature-card",
+      "user-profile",
+      "article-card",
+      "brand-logo",
+      "testimonial",
+      "property-card",
+      "simple-text"
+    ]
+  },
+
+  "status": {
+    "value": "published | draft",
+    "default": "draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "slides": [
+      {
+        "id": "string",
+        "title": "string",
+        "subtitle": "string",
+        "description": "string",
+        "rating": "number",
+
+        "image": {
+          "src": "string",
+          "alt": "string",
+          "aspectRatio": "string"
+        },
+
+        "icon": {
+          "src": "string",
+          "alt": "string",
+          "size": "small | medium | large"
+        },
+
+        "user": {
+          "avatar": "string",
+          "name": "string",
+          "position": "string",
+          "followers": "string",
+          "following": "string"
+        },
+
+        "articleCard": {
+          "image": {
+            "src": "string",
+            "alt": "string"
+          },
+          "title": "string",
+          "subtitle": "string",
+          "badge": ["string"],
+          "author": {
+            "name": "string",
+            "avatar": "string",
+            "date": "string"
+          },
+          "bookmark": true
+        },
+
+        "overlayPosition": {
+          "value": "top-left | top-center | top-right | center-left | center | center-right | bottom-left | bottom-center | bottom-right",
+          "default": "center",
+          "enum": [
+            "top-left",
+            "top-center",
+            "top-right",
+            "center-left",
+            "center",
+            "center-right",
+            "bottom-left",
+            "bottom-center",
+            "bottom-right"
+          ]
+        },
+
+        "alignment": {
+          "value": "left | center | right",
+          "default": "center",
+          "enum": ["left", "center", "right"]
+        },
+
+        "badges": ["string"],
+        "tags": ["string"],
+
+        "button": {
+          "label": "string",
+          "action": "navigate | submit",
+          "to": "string",
+          "style": "string"
+        },
+
+        "secondaryButton": {
+          "label": "string",
+          "action": "navigate | submit",
+          "to": "string",
+          "style": "string"
+        }
+      }
+    ]
+  },
+
+  "config": {
+    "loop": true,
+    "autoplay": true,
+    "interval": "number",
+    "showArrows": true,
+    "showDots": true,
+    "slidesToShow": "number",
+    "slidesToScroll": "number",
+    "pauseOnHover": true,
+    "responsive": [
+      {
+        "breakpoint": "number",
+        "slidesToShow": "number"
+      }
+    ]
+  },
+
+  "style": {
+    "height": "string",
+    "width": "string",
+    "padding": "string",
+    "backgroundColor": "string",
+    "borderRadius": "string",
+    "boxShadow": "string"
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "AccordionGroup",
+
+  "variant": {
+    "value": "string",
+    "default": "single",
+    "enum": ["single", "multiple"]
+  },
+
+  "status": {
+    "value": "published | draft",
+    "default": "draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "accordion": [
+      {
+        "id": "string",
+        "title": "string",
+        "content": "string",
+        "defaultOpen": false
+      }
+    ],
+
+    "iconPosition": {
+      "value": "left | right",
+      "default": "right",
+      "enum": ["left", "right"]
+    },
+
+    "titleSize": {
+      "value": "sm | md | lg",
+      "default": "md",
+      "enum": ["sm", "md", "lg"]
+    },
+
+    "collapsible": true
+  },
+
+  "style": {
+    "backgroundColor": "string",
+    "textColor": "string",
+    "borderColor": "string",
+    "borderRadius": "string",
+    "padding": "string"
+  },
+
+  "config": {
+    "animation": true,
+    "responsive": true
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+},
+
+{
+  "id": "string",
+  "type": "ResizableLayout",
+
+  "variant": {
+    "value": "layout | component",
+    "default": "layout",
+    "enum": ["layout", "component"]
+  },
+
+  "status": {
+    "value": "published | draft",
+    "default": "draft",
+    "enum": ["published", "draft"]
+  },
+
+  "props": {
+    "direction": {
+      "value": "vertical | horizontal",
+      "default": "horizontal",
+      "enum": ["vertical", "horizontal"]
+    },
+
+    "sizes": ["number"],
+
+    "label": "string",
+
+    "children": [
+      {
+        "id": "string",
+        "type": "layout | component",
+        "direction": "vertical | horizontal",
+        "sizes": ["number"],
+        "props": {
+          "label": "string"
+        },
+        "children": [] 
+      }
+    ]
+  },
+
+  "config": {
+    "minSize": "number",
+    "maxSize": "number",
+    "snap": true,
+    "responsive": true,
+    "dragHandleWidth": "number"
+  },
+
+  "style": {
+    "backgroundColor": "string",
+    "handleColor": "string",
+    "borderColor": "string",
+    "height": "string",
+    "width": "string"
+  },
+
+  "meta": {
+    "createdAt": "string",
+    "updatedAt": "string",
+    "lastModified": "string",
+    "author": {
+      "id": "string",
+      "name": "string"
+    }
+  }
+}
+
+]
